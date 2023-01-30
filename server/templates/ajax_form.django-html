@@ -1,0 +1,70 @@
+{% csrf_token %}
+
+{% if form %}
+    {% for field in form %}
+
+        {% if field.widget_type == 'textarea' or field.widget_type == 'clearablefile'  %}
+            <div class="mb-5 col-12">
+                <label for="contact-name" class="form-label">{{ field.label }}</label>
+                {{ field }}
+        {% elif field.widget_type == 'recaptchav2checkbox' %}
+            <div class="col-12 mb-5">
+                {{ field }}
+        {% else %}
+            <div class="mb-5 col-12 col-md-6">
+                <label for="contact-name" class="form-label">{{ field.label }}</label>
+                {{ field }}
+        {% endif %}
+            <span id="id_{{field.name}}_error" class="text-danger ajaxFormErrorLabel"></span>
+        </div>
+
+    {% endfor %}
+{% endif %}
+
+<script>
+
+    addEventListener("load", (e) => {
+
+        const ajaxForm = document.querySelector('#ajaxForm')
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+        ajaxForm.addEventListener('submit', (e) => {
+
+            e.preventDefault()
+
+            formData = new FormData(ajaxForm)
+            formData.append('captcha', formData.get('g-recaptcha-response'))
+
+            fetch('{{ form_action }}{{ form_id }}{% if form_id %}/{% endif %}', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
+                        'X-CSRFToken': csrftoken,
+                    },
+                    body: formData
+            })
+                .then(res => {
+                        if (res.ok) {
+                            ajaxForm.reset()
+                            $('#successModal').modal('show')
+                            {% if form_reload %}
+                                location.reload();
+                            {% endif %}
+                        } else {
+                            return res.json()
+                        }
+                    } 
+                )
+                .then(res => {
+                    res ? Object.entries(res).forEach(err => {
+                        let errLabel = document.getElementById(`id_${err[0]}_error`)
+                        errLabel.innerHTML = err[1]
+                        setTimeout(()=>{
+                            errLabel.innerHTML = ''
+                        }, 5000)
+                    }) : ''
+                })
+        })
+    });
+
+</script>

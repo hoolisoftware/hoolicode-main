@@ -1,0 +1,121 @@
+{% extends 'base.django-html' %}
+
+{% load core %}
+{% load company %}
+
+{% block title %}
+Вакансия {{ object.position }}
+{% endblock %}
+
+{% block content %}
+<main id="main-content" data-bs-spy="scroll">
+    <div class="rn-breadcrumb-inner ptb--30">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <ul class="breadcrumb-list">
+                        <li class="item"><a rel="preload" href="{% url 'company:home' %}">Главная</a></li>
+                        <li class="separator"><i class="feather-chevron-right"></i></li>
+                        <li class="item"><a rel="preload" href="{% url 'company:vacancy-list' %}">Вакансии</a></li>
+                        <li class="separator"><i class="feather-chevron-right"></i></li>
+                        <li class="item current">{{ object.position }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rn-blog-area rn-blog-details-default rn-section-gapTop mb-5">
+        <div class="container">
+            <div class="row g-6">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="blog-details-area">
+                        <div class="blog-content-top">
+                            <h2 class="title">
+                                {{ object.position }}
+                            </h2>
+                            <p>
+                                <a class="btn btn-success btn-sm" href="#ajaxFormHeading">Откликнуться</a>
+                            </p>
+                            <span class="date"><i class="fa-regular fa-calendar"></i>&nbsp; Вакансия опубликована {{ object.posted }}</span>
+                            <br>
+                            <span class="text-warning h2">{{ object.salary }}</span>
+                        </div>
+                        <div class="news-details">
+                            {{ object.description|markdown }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 mt_md--40 mt_sm--40">
+                    <aside class="rwt-sidebar">
+                        <div class="rbt-single-widget widget_recent_entries mt--40">
+                            <h3 class="title">Другие вакансии</h3>
+                            <div class="inner">
+                                <ul>
+                                    {% get_recent_vacancies as vacancies %}
+                                    {% for vacancy in vacancies %}
+                                        <li>
+                                            <a rel="preload" class="d-block" href="{{ vacancy.get_absolute_url }}">
+                                                {{ vacancy.position }}
+                                            </a>
+                                            <span class="cate">{{ vacancy.salary }}</span>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="ajaxFormHeading">
+        <div class="row g-5">
+            <div class="col-lg-6 sal-animate" data-sal="slide-up" data-sal-delay="200" data-sal-duration="800">
+                <div class="form-wrapper-one registration-area">
+                    <h3 class="mb--30">Форма отклика на вакансию</h3>
+                    <form id="ajaxForm" method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            {% include 'ajax_form.django-html' with form=form form_action='/api/vacancy-request-create/' %}
+                            <div class="mb-5 col-12">
+                                <label for="condition" class="rn-check-box-label">Нажимая "Отликнуться", вы соглашаетесь принять на вашу электронную почту письмо с результатом вашего отклика.</label>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-success w-100">Откликнуться</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus libero ratione magni sapiente, veniam, enim</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id reprehenderit molestias architecto, ab quo amet illum nemo aut animi tempore facilis iste laboriosam, doloribus perspiciatis, libero at. Numquam, ullam in.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus pariatur ullam nulla inventore non architecto totam harum tenetur, odio corrupti obcaecati velit enim autem accusantium optio quod natus deleniti labore. 
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="rn-popup-modal placebid-modal-wrapper modal fade" id="successModal" tabindex="-1" style="display: none;" aria-hidden="true">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title"><i class="fa-regular fa-square-check"></i> &nbsp;Отклик создан!</h3>
+            </div>
+            <div class="modal-body">
+                <p class="text-light">В скором времени вы будете уведомлены на почту.</p>
+                <p class="text-muted">Рассмотрение откликов занимает до 2 рабочих дней.</p>
+                <div class="placebid-form-box">
+                    <div class="bit-continue-button text-end">
+                        <button type="button" class="btn btn-primary-alta mt--10" data-bs-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %} || Hoolicode</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+
+    <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+    <!-- CSS 
+    ============================================ -->
+    <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/feature.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor/odometer.css' %}">
+
+    <!-- Style css -->
+    <link rel="stylesheet" href="{% static '' %}css/style.css">
+    
+    {% block custom_styles %}
+    {% endblock %}
+</head>
+
+<body class="template-color-1 nft-body-connect">
+    {% include 'header.django-html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'footer.django-html' %}
+
+    <!-- End Top To Bottom Area  -->
+    <!-- JS ============================================ -->
+    <script src="{% static 'js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/vendor/modernizer.min.js' %}"></script>
+    <script src="{% static 'js/vendor/feather.min.js' %}"></script>
+    <script src="{% static 'js/vendor/slick.min.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/vendor/sal.min.js' %}"></script>
+    <script src="{% static 'js/vendor/particles.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery.style.swicher.js' %}"></script>
+    <script src="{% static 'js/vendor/js.cookie.js' %}"></script>
+    <script src="{% static 'js/vendor/count-down.js' %}"></script>
+    <script src="{% static 'js/vendor/isotop.js' %}"></script>
+    <script src="{% static 'js/vendor/imageloaded.js' %}"></script>
+    <script src="{% static 'js/vendor/backtoTop.js' %}"></script>
+    <script src="{% static 'js/vendor/odometer.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery-appear.js' %}"></script>
+    <script src="{% static 'js/vendor/scrolltrigger.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery.custom-file-input.js' %}"></script>
+    <script src="{% static 'js/vendor/savePopup.js' %}"></script>
+    <script src="{% static 'js/vendor/vanilla.tilt.js' %}"></script>
+
+    <!-- main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <!-- Meta Mask  -->
+    <script src="{% static 'js/vendor/web3.min.js' %}"></script>
+    <script src="{% static 'js/vendor/maralis.js' %}"></script>
+    <script src="{% static 'js/vendor/nft.js' %}"></script>
+    {% block custom_scripts %}
+    {% endblock %}
+</body>
+
+</html>

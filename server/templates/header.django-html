@@ -1,0 +1,420 @@
+{% load static %}
+
+<!-- Start Header -->
+<header class="rn-header haeder-default header--sticky">
+    <div class="container">
+        <div class="header-inner">
+            <div class="header-left">
+                <div class="logo-thumbnail logo-custom-css">
+                    <a class="logo-light" href="{% url 'company:home' %}"><img src="{% static '' %}images/logo/logo-white.png"
+                            alt="nft-logo"></a>
+                </div>
+                <div class="mainmenu-wrapper">
+                    <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
+                        <!-- <ul class="mainmenu">
+                            <li class="has-droupdown has-menu-child-item">
+                                <a href="#">Home</a>
+                                <ul class="submenu">
+                                    <li><a href="#">Home page - 01 <i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 02<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 03<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 04<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 05<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 06<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 07<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 08<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 09<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 10<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 11<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 12<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 13<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 14<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 15<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 16<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 17<i class="feather-home"></i></a></li>
+                                    <li><a href="#">Home page - 18<i class="feather-home"></i></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">About</a>
+                            </li>
+                            <li class="has-droupdown has-menu-child-item">
+                                <a href="#">Explore</a>
+                                <ul class="submenu">
+                                    <li><a href="#">Explore Filter<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">Explore Isotop<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">Explore Carousel<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">Explore Simple<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">Explore Place Bid<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">Place Bid With Filter<i class="feather-fast-forward"></i></a>
+                                    </li>
+                                    <li><a href="#">Place Bid With Isotop<i class="feather-fast-forward"></i></a>
+                                    </li>
+                                    <li><a href="#">Place Bid With Carousel<i class="feather-fast-forward"></i></a>
+                                    </li>
+                                    <li><a href="#">Explore Style List<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">Explore List Col-Two<i class="feather-fast-forward"></i></a>
+                                    </li>
+                                    <li><a href="#">Explore Left Filter<i class="feather-fast-forward"></i></a></li>
+                                    <li><a class="live-expo" href="#">Live Explore</a></li>
+                                    <li><a class="live-expo" href="#">Live Explore Carousel</a></li>
+                                    <li><a class="live-expo" href="#">Live With Place Bid</a></li>
+                                </ul>
+                            </li>
+                            <li class="with-megamenu">
+                                <a href="#">Pages</a>
+                                <div class="rn-megamenu">
+                                    <div class="wrapper">
+                                        <div class="row row--0">
+                                            <div class="col-lg-3 single-mega-item">
+                                                <ul class="mega-menu-item">
+                                                    <li>
+                                                        <a href="#">Create NFT<i data-feather="file-plus"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Upload Type<i data-feather="layers"></i></a>
+                                                    </li>
+                                                    <li><a href="#">Activity<i data-feather="activity"></i></a></li>
+                                                    <li>
+                                                        <a href="#">Creators<i data-feather="users"></i></a>
+                                                    </li>
+                                                    <li><a href="#">Our Collection<i data-feather="package"></i></a>
+                                                    </li>
+                                                    <li><a href="#">Upcoming Projects<i
+                                                                data-feather="loader"></i></a></li>
+                                                    <li><a href="#">Create Collection<i
+                                                                data-feather="edit-3"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-3 single-mega-item">
+                                                <ul class="mega-menu-item">
+                                                    <li><a href="#">Log In <i data-feather="log-in"></i></a></li>
+                                                    <li><a href="#">Registration <i
+                                                                data-feather="user-plus"></i></a></li>
+                                                    <li><a href="#">Forget Password <i data-feather="key"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Author/Profile(User) <i
+                                                                data-feather="user"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Connect to Wallet <i
+                                                                data-feather="pocket"></i></a>
+                                                    </li>
+                                                    <li><a href="#">Privacy Policy <i
+                                                                data-feather="file-text"></i></a></li>
+                                                    <li><a href="#">Newsletter<i data-feather="book-open"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-3 single-mega-item">
+                                                <ul class="mega-menu-item">
+
+                                                    <li><a href="#">Product<i data-feather="folder"></i></a></li>
+                                                    <li><a href="#">Product Details <i
+                                                                data-feather="layout"></i></a></li>
+                                                    <li><a href="#">NFT Ranking<i
+                                                                data-feather="trending-up"></i></a></li>
+                                                    <li><a href="#">Edit Profile<i data-feather="edit"></i></a></li>
+                                                    <li><a href="#">Blog Details<i data-feather="book-open"></i></a>
+                                                    </li>
+                                                    <li><a href="#">404 <i data-feather="alert-triangle"></i></a>
+                                                    </li>
+                                                    <li><a href="#">Forum & Community<i
+                                                                data-feather="message-circle"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-3 single-mega-item">
+                                                <ul class="mega-menu-item">
+                                                    <li><a href="#">About Us<i data-feather="award"></i></a></li>
+                                                    <li><a href="#">Contact <i data-feather="headphones"></i></a>
+                                                    </li>
+                                                    <li><a href="#">Support/FAQ <i
+                                                                data-feather="help-circle"></i></a></li>
+                                                    <li><a href="#">Terms & Condition <i
+                                                                data-feather="list"></i></a></li>
+                                                    <li><a href="#">Coming Soon <i data-feather="clock"></i></a>
+                                                    </li>
+                                                    <li><a href="#">Maintenance <i data-feather="cpu"></i></a></li>
+                                                    <li><a href="#">Forum Details <i
+                                                                data-feather="message-circle"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="has-droupdown has-menu-child-item">
+                                <a class="down" href="#">Blog</a>
+                                <ul class="submenu">
+                                    <li><a href="#">Blog Single Column<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">Blog Two Column<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">Blog Three Column<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">Blog Four Column<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">Blog Details<i class="feather-fast-forward"></i></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a></li>
+                        </ul> -->
+                        <!-- Start Mainmanu Nav -->
+                        <ul class="mainmenu">
+                            <li>
+                                <a href="{% url 'company:home' %}">Главная</a>
+                            </li>
+                            <li>
+                                <a href="#">Услуги</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'posts:list' %}">Блог</a>
+                            </li>
+                            <li class="has-droupdown has-menu-child-item">
+                                <a href="#">Дополнительно</a>
+                                <ul class="submenu">
+                                    <li><a href="#">О нас<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">Форум<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="{% url 'company:vacancy-list' %}">Вакансии<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">Донат<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">Реф. система<i class="feather-fast-forward"></i></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'company:contact' %}">Контакты</a></li>
+                        </ul>
+                        <!-- End Mainmanu Nav -->
+                    </nav>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="setting-option d-none d-lg-block">
+                    <form class="search-form-wrapper" action="#">
+                        <input type="search" placeholder="Поиск по сайту..." aria-label="Search">
+                        <div class="search-icon">
+                            <button><i class="feather-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="setting-option rn-icon-list d-block d-lg-none">
+                    <div class="icon-box search-mobile-icon">
+                        <button><i class="feather-search"></i></button>
+                    </div>
+                    <form id="header-search-1" action="#" method="GET" class="large-mobile-blog-search">
+                        <div class="rn-search-mobile form-group">
+                            <button type="submit" class="search-button"><i class="feather-search"></i></button>
+                            <input type="text" placeholder="Поиск по сайту...">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="setting-option rn-icon-list notification-badge">
+                    <div class="icon-box">
+                        <a href="#"><i class="feather-bell"></i><span class="badge">6</span></a>
+                    </div>
+                </div>
+
+                {% if request.user.is_authenticated %}
+                    <div class="header_admin" id="header_admin">
+                        <div class="setting-option rn-icon-list user-account">
+                            <div class="icon-box">
+                                <a href="#"><img src="{% static '' %}images/icons/boy-avater.png" alt="Images"></a>
+                                <div class="rn-dropdown">
+                                    <div class="rn-inner-top">
+                                        <h4 class="title"><a href="#">{{ request.user.get_full_name }}</a></h4>
+                                        <span><a href="#">Баланс : {{ request.user.balance }} HCC</a></span>
+                                        <span><a href="#">Баллы : {{ request.user.xp }} XP</a></span>
+                                    </div>
+                                    <div class="add-fund-button mt--20 pb--20">
+                                        <a class="btn btn-primary-alta w-100" href="#">Создать новый заказ</a>
+                                    </div>
+                                    <ul class="list-inner">
+                                        <li><a href="#"><i class="fa-solid fa-user"></i> Настройки профиля</a></li>
+                                        <li><a href="#"><i class="fa-solid fa-sort"></i> Мои заказы</a></li>
+                                        <li><a href="{% url 'users:logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Выйти</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    &nbsp;&nbsp;<a class="btn btn-primary text-white" href="{% url 'users:login' %}">Войти</a>
+                {% endif %}
+
+
+                <div class="setting-option mobile-menu-bar d-block d-xl-none">
+                    <div class="hamberger">
+                        <button class="hamberger-button">
+                            <i class="feather-menu"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<!-- End Header Area -->
+
+<div class="popup-mobile-menu">
+    <div class="inner">
+        <div class="header-top">
+            <div class="logo logo-custom-css">
+                <a class="logo-light" href="#"><img src="{% static '' %}images/logo/logo-white.png"
+                        alt="nft-logo"></a>
+                <a class="logo-dark" href="#"><img src="{% static '' %}images/logo/logo-dark.png"
+                        alt="nft-logo"></a>
+            </div>
+            <div class="close-menu">
+                <button class="close-button">
+                    <i class="feather-x"></i>
+                </button>
+            </div>
+        </div>
+        <nav>
+            <!-- <ul class="mainmenu">
+                <li class="has-droupdown">
+                    <a class="nav-link its_new" href="#">Home</a>
+                    <ul class="submenu">
+                        <li><a href="#">Home page - 01 <i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 02<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 03<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 04<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 05<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 06<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 07<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 08<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 09<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 10<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 11<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 12<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 13<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 14<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 15<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 16<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 17<i class="feather-home"></i></a></li>
+                        <li><a href="#">Home page - 18<i class="feather-home"></i></a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About</a>
+                </li>
+                <li class="has-droupdown">
+                    <a class="nav-link its_new" href="#">Explore</a>
+                    <ul class="submenu">
+                        <li><a href="#">Explore Filter<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Explore Isotop<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Explore Carousel<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Explore Simple<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Explore Place Bid<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Place Bid With Filter<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Place Bid With Isotop<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Place Bid With Carousel<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Explore Style List<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Explore List Col-Two<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Explore Left Filter<i class="feather-fast-forward"></i></a></li>
+                        <li><a class="live-expo" href="#">Live Explore</a></li>
+                        <li><a class="live-expo" href="#">Live Explore Carousel</a></li>
+                        <li><a class="live-expo" href="#">Live With Place Bid</a></li>
+                    </ul>
+                </li>
+                <li class="with-megamenu">
+                    <a class="nav-link its_new" href="#">Pages</a>
+                    <div class="rn-megamenu">
+                        <div class="wrapper">
+                            <div class="row row--0">
+                                <div class="col-lg-3 single-mega-item">
+                                    <ul class="mega-menu-item">
+                                        <li>
+                                            <a href="#">Create NFT<i data-feather="file-plus"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Upload Type<i data-feather="layers"></i></a>
+                                        </li>
+                                        <li><a href="#">Activity<i data-feather="activity"></i></a></li>
+                                        <li>
+                                            <a href="#">Creators<i data-feather="users"></i></a>
+                                        </li>
+                                        <li><a href="#">Our Collection<i data-feather="package"></i></a></li>
+                                        <li><a href="#">Upcoming Projects<i data-feather="loader"></i></a></li>
+                                        <li><a href="#">Create Collection<i data-feather="edit-3"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-3 single-mega-item">
+                                    <ul class="mega-menu-item">
+                                        <li><a href="#">Log In <i data-feather="log-in"></i></a></li>
+                                        <li><a href="#">Registration <i data-feather="user-plus"></i></a></li>
+                                        <li><a href="#">Forget Password <i data-feather="key"></i></a></li>
+                                        <li>
+                                            <a href="#">Author/Profile(User) <i data-feather="user"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Connect to Wallet <i data-feather="pocket"></i></a>
+                                        </li>
+                                        <li><a href="#">Privacy Policy <i data-feather="file-text"></i></a></li>
+                                        <li><a href="#">Newsletter<i data-feather="book-open"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-3 single-mega-item">
+                                    <ul class="mega-menu-item">
+
+                                        <li><a href="#">Product<i data-feather="folder"></i></a></li>
+                                        <li><a href="#">Product Details <i data-feather="layout"></i></a></li>
+                                        <li><a href="#">NFT Ranking<i data-feather="trending-up"></i></a></li>
+                                        <li><a href="#">Our News <i data-feather="message-square"></i></a></li>
+                                        <li><a href="#">Blog Details<i data-feather="book-open"></i></a></li>
+                                        <li><a href="#">404 <i data-feather="alert-triangle"></i></a></li>
+                                        <li><a href="#">Forum & Community<i data-feather="message-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-3 single-mega-item">
+                                    <ul class="mega-menu-item">
+                                        <li><a href="#">About Us<i data-feather="award"></i></a></li>
+                                        <li><a href="#">Contact <i data-feather="headphones"></i></a></li>
+                                        <li><a href="#">Support/FAQ <i data-feather="help-circle"></i></a></li>
+                                        <li><a href="#">Terms & Condition <i data-feather="list"></i></a></li>
+                                        <li><a href="#">Coming Soon <i data-feather="clock"></i></a></li>
+                                        <li><a href="#">Maintenance <i data-feather="cpu"></i></a></li>
+                                        <li><a href="#">Forum Details <i data-feather="message-circle"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-droupdown has-menu-child-item">
+                    <a class="nav-link its_new" href="#">Blog</a>
+                    <ul class="submenu">
+                        <li><a href="#">Blog Single Column<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Blog Two Column<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Blog Three Column<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Blog Four Column<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Blog Details<i class="feather-fast-forward"></i></a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul> -->
+            <!-- Start Mainmanu Nav -->
+            <ul class="mainmenu">
+                <li>
+                    <a class="nav-link its_new" href="{% url 'company:home' %}">Главная</a>
+                </li>
+                <li>
+                    <a href="#">Услуги</a>
+                </li>
+                <li>
+                    <a href="{% url 'posts:list' %}">Блог</a>
+                </li>
+                <li>
+                    <a href="{% url 'company:contact' %}">Контакты</a>
+                </li>
+                <li class="has-droupdown">
+                    <a class="nav-link its_new" href="#">Подробнее</a>
+                    <ul class="submenu">
+                        <li><a href="#">О нас<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Форум<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="{% url 'company:vacancy-list' %}">Вакансии<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Донат<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">Реферальная система<i class="feather-fast-forward"></i></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- End Mainmanu Nav -->
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,220 @@
+{% extends 'base.django-html' %}
+
+{% load static %}
+{% load posts %}
+{% load core %}
+
+{% block title %}
+    {{ object.title }}
+{% endblock %}
+
+{% block content %}
+    <div class="rn-breadcrumb-inner ptb--30">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <ul class="breadcrumb-list">
+                        <li class="item"><a href="#"">Home</a></li>
+                        <li class="separator"><i class="feather-chevron-right"></i></li>
+                        <li class="item current">{{ object.title }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="rn-blog-area rn-blog-details-default rn-section-gapTop">
+    <div class="container">
+        <div class="row g-6">
+            <div class="col-xl-8 col-lg-8">
+                <div class="rn-blog-listen">
+                    <div class="blog-content-top mb-2">
+                        <h2 class="title">{{ object.title }}</h2>
+                        <span class="date">{{ object.created }}</span>
+                    </div>
+                    <div class="tagcloud mb-4">
+                        {% for tag in object.tags.all %}
+                            <a href="#">{{ tag.name }}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="bd-thumbnail">
+                        <div class="large-img mb--30">
+                            <img class="w-100" style="width: 100%; height: 300px; object-fit: cover;" src="{{ object.thumbnail.url }}" alt="Blog Images">
+                        </div>
+                    </div>
+                    <div class="news-details">
+                        {{ object.content|markdown }}
+                    </div>
+                    <div class="comments-wrapper pt--40">
+                        <div class="comments-area">
+                            <div class="trydo-blog-comment">
+                                <div class="mb--40">
+                                    <h5 class="comment-title">{{ object.comments.count }} комментариев</h5>
+                                    <a class="btn btn-primary" href="#ajaxFormHeading">Прокоментировать</a>
+                                </div>
+                                <!-- Start Coment List  -->
+                                <ul class="comment-list">
+
+                                    {% for comment in object.comments.all %}
+                                        <!-- Start Single Comment  -->
+                                        <li class="comment parent">
+                                            <div class="single-comment">
+                                                <div class="comment-author comment-img">
+                                                    <img style="height: 50px; width: 50px; object-fit: cover;" class="comment-avatar" src="{% static 'images/anonymous_user.png' %}" alt="Comment Image">
+                                                    <div class="m-b-20">
+                                                        <div class="commenter">{{ comment.full_name }}</div>
+                                                        <div class="time-spent">{{ comment.created }}</div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-text">
+                                                    <p>
+                                                        - {{ comment.comment }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- End Single Comment  -->
+                                    {% endfor %}
+                                </ul>
+                                <!-- End Coment List  -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- comment form area Start -->
+
+                    <!-- Start Contact Form Area  -->
+                    <div class="rn-comment-form pt--60" id="ajaxFormHeading">
+                        <div class="inner">
+                            <div class="section-title">
+                                <h2 class="title">Оставить комментарий</h2>
+                            </div>
+                            <form class="mt--40" id="ajaxForm">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        {% include 'ajax_form.django-html' with form_action='/blog/api/post-comment-create/' form_id=object.id form_reload=True form=None %}
+                                        <div class="row">
+                                            {% for field in form %}
+                                                {% if field.widget_type == 'textarea' %}
+                                                    <div class="rnform-group col-12">
+                                                {% else %}
+                                                    <div class="rnform-group col-12 col-md-6">
+                                                {% endif %}
+                                                    <label>
+                                                        {{ field.label }}
+                                                    </label>
+                                                    {{ field }}
+                                                    <span class="text-danger" id="id_{{field.name}}_error"></span>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="blog-btn">
+                                            <button class="btn btn-primary-alta btn-large w-100" type="submit">
+                                                <span>
+                                                    Отправить
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End Contact Form Area  -->
+
+                    <!-- comment form area End -->
+                    <div class="row g-5 pt--60">
+                        <div class="col-lg-12">
+                            <h3 class="title">Рекомендуем прочитать</h3>
+                        </div>
+                        {% for post in object.get_related %}
+                            <!-- start single blog -->
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                                <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
+                                    <div class="inner">
+                                        <div class="thumbnail">
+                                            <a href="{{ post.get_absolute_url }}">
+                                                <img style="height: 200px; object-fit: cover;" src="{{ post.thumbnail.url }}" alt="Personal Portfolio Images">
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <div class="category-info">
+                                                <div class="category-list">
+                                                    <a href="#">{{ post.category }}</a>
+                                                </div>
+                                                <div class="meta">
+                                                    <span>
+                                                        <i class="feather-clock"></i> 
+                                                        {{ post.created }}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <h4 class="title">
+                                                <a href="{{ post.get_absolute_url }}">
+                                                    {{ post.title }}
+                                                    <i class="feather-arrow-up-right"></i>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end single blog -->
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 mt_md--40 mt_sm--40">
+                <aside class="rwt-sidebar">
+
+                    <div class="rbt-single-widget widget_categories">
+                        <h3 class="title">Популярные категории</h3>
+                        <div class="inner">
+                            <ul class="category-list ">
+                                {% get_popular_categories as popular_categories %}
+                                {% for category in popular_categories %}
+                                    <li>
+                                        <a href="#"><span class="left-content">{{ category.name }}</span><span class="count-text">{{ category.posts.count }}</span></a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="rbt-single-widget widget_tag_cloud mt--40">
+                        <h3 class="title">Популярные теги</h3>
+                        <div class="inner mt--20">
+                            <div class="tagcloud">
+                                {% get_popular_tags as popular_tags %}
+                                {% for tag in popular_tags %}
+                                    <a href="#">{{ tag.name }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rbt-single-widget widget_recent_entries mt--40">
+                        <h3 class="title">Последние посты</h3>
+                        <div class="inner">
+                            <ul>
+                                {% get_recent_posts as recent_posts %}
+                                {% for post in recent_posts %}
+                                    <li>
+                                        <a class="d-block" href="{{ post.get_absolute_url }}">
+                                            {{ post.title }}
+                                        </a>
+                                        <span class="cate">{{ post.category.name }}</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
