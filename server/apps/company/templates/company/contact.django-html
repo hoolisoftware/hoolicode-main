@@ -1,5 +1,6 @@
 {% extends 'base.django-html' %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
     Свяжитесь с нами
@@ -10,13 +11,13 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-12">
-                <h5 class="title text-center text-md-start">Свяжитесь с нами</h5>
+                <h5 class="title text-center text-md-start">{% translate 'Call us!' %}</h5>
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <ul class="breadcrumb-list">
-                    <li class="item"><a href="{% url 'company:home' %}">Главная</a></li>
+                    <li class="item"><a href="{% url 'company:home' %}">{% translate 'Home page' %}</a></li>
                     <li class="separator"><i class="feather-chevron-right"></i></li>
-                    <li class="item current">Контакты</li>
+                    <li class="item current">{% translate 'Contact us' %}</li>
                 </ul>
             </div>
         </div>
@@ -27,11 +28,12 @@
         <div class="row g-5">
             <div class="col-lg-12 sal-animate" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
                 <div class="section-title mb--30 text-center">
-                    <h2 class="title">Наши контактные данные</h2>
+                    <h2 class="title">{% translate 'Our contact  information' %}</h2>
                     <p class="description">
-                        Ниже вы можете увидеть несколько способов выйти с
+                        {% translate 'Call us to get answers for your questions!' %}
+                        <!-- Ниже вы можете увидеть несколько способов выйти с -->
                         <br>
-                        нами на связь и получить дополнительную информацию
+                        <!-- нами на связь и получить дополнительную информацию -->
                     </p>
                 </div>
             </div>
@@ -47,8 +49,8 @@
                         </svg>
                     </div>
                     <div class="inner">
-                        <h4 class="title">Номер телефона</h4>
-                        <p><a href="tel:+444555666777">+444 555 666 777</a></p>
+                        <h4 class="title">{% translate 'Phone number' %}</h4>
+                        <p><a href="tel:+905334685295">+90 (533) 468-52-95</a></p>
                     </div>
                 </div>
             </div>
@@ -62,7 +64,7 @@
                         </svg>
                     </div>
                     <div class="inner">
-                        <h4 class="title">Электронная почта</h4>
+                        <h4 class="title">{% translate 'E-mail' %}</h4>
                         <p><a href="mailto:admin@gmail.com">admin@gmail.com</a></p>
                     </div>
                 </div>
@@ -76,8 +78,8 @@
                         </svg>
                     </div>
                     <div class="inner">
-                        <h4 class="title">Адрес компании</h4>
-                        <p>5678 Bangla Main Road, cities 580 <br> GBnagla, example 54786</p>
+                        <h4 class="title">{% translate 'Address' %}</h4>
+                        <p>Turkey Bursa/İnegöl Yeniceköy mh. Mahmut Kuşcan sk. Nergis-11 apt. NO:8</p>
                     </div>
                 </div>
             </div>
@@ -90,19 +92,16 @@
             <div class="col-lg-6 sal-animate" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
                 <div class="connect-thumbnail">
                     <div class="left-image">
-                        <img src="{% static 'images/contact/contact1.png' %}" alt="Nft_Profile">
+                        <img style="height: 100%" src="{% static 'images/contact/contact1.jpg' %}" alt="Nft_Profile">
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 sal-animate" data-sal="slide-up" data-sal-delay="200" data-sal-duration="800">
                 <div class="form-wrapper-one registration-area">
-                    <h3 class="mb--30">Форма обратной связи</h3>
+                    <h3 class="mb--30">{% translate 'Feedback form' %}</h3>
                     <form class="row" id="ajaxForm">
                         {% include 'ajax_form.django-html' with form=form form_action='/api/feedback-request-create/' %}
-                        <div class="mb-5 rn-check-box">
-                            <label for="condition" class="rn-check-box-label">Нажимая "Отправить", вы...</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Отправить</button>
+                        <button type="submit" class="btn btn-primary">{% translate 'Submit' %}</button>
                     </form>
                 </div>
             </div>
@@ -117,8 +116,8 @@
                 <h3 class="modal-title"><i class="fa-regular fa-square-check"></i> &nbsp;Готово!</h3>
             </div>
             <div class="modal-body">
-                <p class="text-light">В течении часа вы будете уведомлены на почту.</p>
-                <p class="text-muted">Для более быстрой обратной связи звоните на номер телефона компании.</p>
+                <p class="text-light">{% translate "Thanks for this information! We'll email you within a hour." %}</p>
+                <p class="text-muted">{% translate 'For faster feedback try to call phone number.' %}</p>
                 <div class="placebid-form-box">
                     <div class="bit-continue-button text-end">
                         <button type="button" class="btn btn-primary-alta mt--10" data-bs-dismiss="modal">OK</button>

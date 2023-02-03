@@ -1,3 +1,4 @@
+from modeltranslation.admin import TranslationAdmin
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 
@@ -17,7 +18,7 @@ class FeedbackRequestAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'email', 'proceed')
 
 @admin.register(models.FAQ)
-class FAQAdmin(admin.ModelAdmin):
+class FAQAdmin(TranslationAdmin):
     list_display = ('question', )
 
 @admin.register(models.Feature)

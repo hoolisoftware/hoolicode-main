@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!-- Start Footer Area -->
 <div class="rn-footer-one rn-section-gap bg-color--1 mt--100 mt_md--80 mt_sm--80">
@@ -8,27 +9,27 @@
                 <div class="widget-content-wrapper">
                     <div class="footer-left">
                         <div class="logo-thumbnail logo-custom-css">
-                            <a class="logo-light" href="#"><img src="{% static '' %}images/logo/logo-white.png"
-                                    alt="nft-logo"></a>
-                            <a class="logo-dark" href="#"><img src="{% static '' %}images/logo/logo-dark.png"
-                                    alt="nft-logo"></a>
+                            <a class="logo-light" href="#"><img 
+                                style="max-height: initial; width: 100%" src="{% static '' %}images/logo/hooli-logo-big.svg"
+                                alt="nft-logo">
+                            </a>
                         </div>
                         <p class="rn-footer-describe">
                             To maintainable Software - to bright Future.
                         </p>
                     </div>
                     <div class="widget-bottom mt--40 pt--40">
-                        <h6 class="title"></h6>
+                        <h6 class="title">{% translate 'To get latest news' %}</h6>
                         <div class="input-group">
-                            <input type="text" class="form-control bg-color--2" placeholder="Your username"
+                            <input type="text" class="form-control bg-color--2" placeholder="{% translate 'E-mail' %}"
                                 aria-label="Recipient's username">
                             <div class="input-group-append">
                                 <button class="btn btn-primary-alta btn-outline-secondary"
-                                    type="button">Subscribe</button>
+                                    type="button">{% translate 'Subscribe' %}</button>
                             </div>
                         </div>
                         <div class="newsletter-dsc">
-                            <p>Мы не спамим :)</p>
+                            <p>{% translate 'Not spam :)' %}</p>
                         </div>
                     </div>
                 </div>
@@ -36,7 +37,7 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_mobile--40">
                 <div class="footer-widget widget-quicklink">
-                    <h6 class="widget-title">Страницы</h6>
+                    <h6 class="widget-title">{% translate 'Important links' %}</h6>
                     <ul class="footer-list-one">
                         <li class="single-list"><a href="#">Protocol Explore</a></li>
                         <li class="single-list"><a href="#">System Token</a></li>
@@ -51,7 +52,7 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_md--40 mt_sm--40">
                 <div class="footer-widget widget-information">
-                    <h6 class="widget-title">Экосистема</h6>
+                    <h6 class="widget-title">{% translate 'Ecosystem' %}</h6>
                     <ul class="footer-list-one">
                         <li class="single-list"><a href="#">Market Explore</a></li>
                         <li class="single-list"><a href="#">Ready Token</a></li>
@@ -66,7 +67,7 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_md--40 mt_sm--40">
                 <div class="footer-widget">
-                    <h6 class="widget-title">Топ-заказчики</h6>
+                    <h6 class="widget-title">{% translate 'Top-customers' %}</h6>
                     <ul class="footer-recent-post">
                         <li class="recent-post">
                             <div class="thumbnail">
@@ -77,7 +78,7 @@
                             </div>
                             <div class="content">
                                 <h6 class="title"><a href="#">Голубчик</a></h6>
-                                <p>10 orders</p>
+                                <p>10 {% translate 'orders' %}</p>
                                 <span class="price">12 258 $</span>
                             </div>
                         </li>
@@ -90,7 +91,7 @@
                             </div>
                             <div class="content">
                                 <h6 class="title"><a href="#">Anonymous</a></h6>
-                                <p>1 orders</p>
+                                <p>1 {% translate 'orders' %}</p>
                                 <span class="price">9 125 $</span>
                             </div>
                         </li>
@@ -103,13 +104,38 @@
                             </div>
                             <div class="content">
                                 <h6 class="title"><a href="#">Арес</a></h6>
-                                <p>12 orders</p>
+                                <p>12 {% translate 'orders' %}</p>
                                 <span class="price">1 246 $</span>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
+        </div>
+        <br>
+        <div>
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            <div class="mb-3">
+                {% translate 'Available languages :' %}
+            </div>
+            {% for language in languages %}
+                <img 
+                    style="height:40px; cursor: pointer" 
+                    src="{% static 'images/flags/' %}{{ language.code }}.png" 
+                    alt="{{ language.code }}"
+                    onclick="
+                        getElementById('djangoLanguageSelect').value='{{language.code}}'
+                        getElementById('djangoLanguageForm').submit()
+                    "
+                >
+            {% endfor %}
+            <form id="djangoLanguageForm" action="{% url 'set_language' %}" method='POST'>
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ redirect_to }}">
+                <input name='language' type='hidden' id="djangoLanguageSelect">
+            </form>
         </div>
     </div>
 </div>
@@ -120,10 +146,9 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="copyright-left">
-                    <span>©2023 ООО Hoolicode. Все права защищены.</span>
+                    <span>©2023 Hooli Software. {% translate 'All rights reserved.' %}</span>
                     <ul class="privacy">
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">{% translate 'Privacy Policy' %}</a></li>
                     </ul>
                 </div>
             </div>

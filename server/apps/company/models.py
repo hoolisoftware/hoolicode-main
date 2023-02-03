@@ -23,10 +23,10 @@ class SingletonModel(models.Model):
 
 
 class Vacancy(models.Model):
-    position = models.CharField(max_length=255)
+    position = models.CharField(_('position'), max_length=255)
     slug = AutoSlugField(populate_from='position')
-    salary = models.CharField(max_length=255)
-    description = models.TextField()
+    salary = models.CharField(_('salary'), max_length=255)
+    description = models.TextField(_('description'))
     posted = models.DateField(auto_now=True)
 
     class Meta:
@@ -38,17 +38,17 @@ class Vacancy(models.Model):
 
 
 class VacancyRequest(models.Model):
-    full_name = models.CharField(max_length=255)
-    email = models.EmailField()
-    message = models.TextField()
-    cv = models.FileField(upload_to='company/cv/')
+    full_name = models.CharField(_('full name'), max_length=255)
+    email = models.EmailField(_('e-mail'))
+    message = models.TextField(_('message'))
+    cv = models.FileField(_('cv'), upload_to='company/cv/')
     created = models.DateTimeField(auto_now=True)
-    proceed = models.BooleanField(default=False)
+    proceed = models.BooleanField(_('is proceed?'), default=False)
 
 
 class FeedbackRequest(models.Model):
-    full_name = models.CharField(max_length=255)
-    email = models.EmailField()
+    full_name = models.CharField(_('full name'), max_length=255)
+    email = models.EmailField(_('e-mail'))
     subject = models.CharField(max_length=255)
     message = models.TextField()
     created = models.DateTimeField(auto_now=True)
@@ -56,8 +56,8 @@ class FeedbackRequest(models.Model):
 
 
 class FAQ(models.Model):
-    question = models.TextField()
-    answer = models.TextField()
+    question = models.TextField(_('question'))
+    answer = models.TextField(_('answer'))
 
     class Meta:
         verbose_name = _('FAQ')
@@ -65,12 +65,12 @@ class FAQ(models.Model):
 
 
 class Feature(models.Model):
-    placeholder = models.CharField(max_length=255)
+    placeholder = models.CharField(_('placeholder'), max_length=255)
 
 
 class Settings(SingletonModel): 
-    quote = models.TextField()
+    quote = models.TextField(_('quote'))
     
     class Meta:
         verbose_name = _('settings')
-        verbose_name_plural = _('setttings')
+        verbose_name_plural = _('settings')
