@@ -1,6 +1,7 @@
 {% extends 'base.django-html' %}
 
 {% load static %}
+{% load i18n %}
 
 {% block title %}
     Блог
@@ -12,13 +13,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
-                    <h5 class="title text-center text-md-start">Наш блог</h5>
+                    <h5 class="title text-center text-md-start">{% translate 'Our blog' %}</h5>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-list">
-                        <li class="item"><a href="{% url 'company:home' %}">Главная</a></li>
+                        <li class="item"><a href="{% url 'company:home' %}">{% translate 'Home page' %}</a></li>
                         <li class="separator"><i class="feather-chevron-right"></i></li>
-                        <li class="item current">Блог</li>
+                        <li class="item current">{% translate 'Blog' %}</li>
                     </ul>
                 </div>
             </div>
@@ -63,11 +64,11 @@
                 <div class="col-lg-12" data-sal="slide-up" data-sal-delay="550" data-sal-duration="800">
                     <nav class="pagination-wrapper" aria-label="Page navigation example">
                         <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">{% translate 'Previous' %}</a></li>
                             <li class="page-item"><a class="page-link active" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            <li class="page-item"><a class="page-link" href="#">{% translate 'Next' %}</a></li>
                         </ul>
                     </nav>
                 </div>

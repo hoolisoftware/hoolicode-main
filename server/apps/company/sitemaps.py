@@ -12,7 +12,10 @@ class StaticViewSitemap(sitemaps.Sitemap):
         return [
             'company:home', 
             'company:contact', 
+            'company:about',
             'company:vacancy-list',            
+            'users:login',
+            'users:register',
             'posts:list',
         ]
 

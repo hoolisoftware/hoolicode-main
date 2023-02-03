@@ -1,0 +1,169 @@
+{% extends 'base.django-html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+    {% translate 'About us' %}
+{% endblock %}
+
+{% block content %}
+<div class="rn-about-banner-area rn-section-gapTop">
+    <div class="container mb--30">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="title about-title-m sal-animate" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">To maintainable software - to bright Future</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid about-fluidimg ">
+        <div class="row">
+            <div class="img-wrapper">
+                <div class="bg_image--22 bg_image">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="h--100">
+                    <div class="rn-about-card mt_dec--50 widge-wrapper rbt-sticky-top-adjust" style="top: 100px;">
+                        <div class="inner">
+                            <h2 class="title sal-animate" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                                {% translate 'Why We Do This' %}
+                            </h2>
+                            <p class="about-disc sal-animate" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                                {% translate 'We aim to take the web-development industry to the absolutely new level.' %} 
+                                <br>
+                                {% translate 'Is this not enough?' %}
+                            </p>
+                            <a href="{% url 'posts:list' %}" class="btn btn-primary-alta btn-large sal-animate mt--20" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                                {% translate 'See Our Blog' %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="rn-about-card transparent-bg">
+                    <div class="inner">
+                        <h3 class="title sal-animate" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                            {% translate 'How did we start' %}
+                        </h3>
+                        <p class="about-disc mb--0 sal-animate" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                            {% translate 'We started providing services relatively recently and suddenly, despite the fact that we studied the market for many years and made conclusions.' %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="rn-about-Quote-area rn-section-gapTop">
+    <div class="container">
+        <div class="row g-5 d-flex align-items-center">
+            <div class="col-lg-6">
+                <div class="rn-about-title-wrapper">
+                    <h3 class="title sal-animate" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                        {% translate "Let's create progressive software solutions for your bussiness together!" %}
+                    </h3>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="rn-about-wrapper sal-animate" data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+                    <p>
+                        {% translate 'We love our work and respect our clients, doing everything for their business. Terms, prices, conditions - everything is projected only for the convenience and quality of service.' %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="rn-statistick-area rn-section-gapTop">
+    <div class="container">
+        <div class="row mb--30">
+            <div class="col-12 text-center">
+                <h3>{% translate 'What we did?' %}</h3>
+            </div>
+        </div>
+        <div class="row g-5">
+            <div class="offset-lg-2 col-lg-4 col-md-6">
+                <div class="single-counter-up text-center">
+                    <h3 class="counter">
+                        <span class="odometer odometer-auto-theme" data-count="3">
+                            <div class="odometer-inside">
+                                <span class="odometer-digit">
+                                    <span class="odometer-digit-spacer">
+                                        8
+                                    </span>
+                                    <span class="odometer-digit-inner">
+                                        <span class="odometer-ribbon">
+                                            <span class="odometer-ribbon-inner">
+                                                <span class="odometer-value">
+                                                    0
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="odometer-digit">
+                                    <span class="odometer-digit-spacer">
+                                        8
+                                    </span>
+                                    <span class="odometer-digit-inner">
+                                        <span class="odometer-ribbon">
+                                            <span class="odometer-ribbon-inner">
+                                                <span class="odometer-value">
+                                                    0
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="odometer-digit">
+                                    <span class="odometer-digit-spacer">
+                                        8
+                                    </span>
+                                    <span class="odometer-digit-inner">
+                                        <span class="odometer-ribbon">
+                                            <span class="odometer-ribbon-inner">
+                                                <span class="odometer-value">
+                                                    0
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </span>
+                            </div>
+                        </span>
+                    </h3>
+                    <div class="botton-title">{% translate 'Employee' %}</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-counter-up text-center">
+                    <h3 class="counter"><span class="odometer odometer-auto-theme" data-count="35"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">5</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">8</span></span></span></span></span></div></span>
+                    </h3>
+                    <div class="botton-title">{% translate 'Projects' %}</div>
+                </div>
+            </div>
+            <div class="offset-lg-2 col-lg-4 col-md-6">
+                <div class="single-counter-up text-center">
+                    <h3 class="counter"><span class="odometer odometer-auto-theme" data-count="3000"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">1</span></span></span></span></span><span class="odometer-formatting-mark">,</span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">3</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">2</span></span></span></span></span></div></span>
+                    $</h3>
+                    <div class="botton-title">{% translate 'Earning' %}</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-counter-up text-center">
+                    <h3 class="counter"><span class="odometer odometer-auto-theme" data-count="23"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">6</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">5</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div></span>
+                    </h3>
+                    <div class="botton-title">{% translate 'Happy clients' %}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

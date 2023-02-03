@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-03 05:51+0300\n"
+"POT-Creation-Date: 2023-02-03 17:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,431 +18,596 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\apps\company\apps.py:7
+#: .\server\apps\company\apps.py:7
 msgid "company"
 msgstr "kurumsal"
 
-#: .\apps\company\models.py:26
+#: .\server\apps\company\models.py:26
 msgid "position"
 msgstr "pozisyon"
 
-#: .\apps\company\models.py:28
+#: .\server\apps\company\models.py:28
 msgid "salary"
 msgstr "maaş"
 
-#: .\apps\company\models.py:29
+#: .\server\apps\company\models.py:29
 msgid "description"
 msgstr "açıklama"
 
-#: .\apps\company\models.py:33
+#: .\server\apps\company\models.py:33
 msgid "vacancy"
 msgstr "iş ilanı"
 
-#: .\apps\company\models.py:34
+#: .\server\apps\company\models.py:34
 msgid "vacancies"
 msgstr "iş ilanları"
 
-#: .\apps\company\models.py:41 .\apps\company\models.py:50
+#: .\server\apps\company\models.py:41 .\server\apps\company\models.py:50
 msgid "full name"
 msgstr "ad soyad"
 
-#: .\apps\company\models.py:42 .\apps\company\models.py:51
+#: .\server\apps\company\models.py:42 .\server\apps\company\models.py:51
 msgid "e-mail"
 msgstr "E-posta"
 
-#: .\apps\company\models.py:43
+#: .\server\apps\company\models.py:43
 msgid "message"
 msgstr "Mesaj"
 
-#: .\apps\company\models.py:44
+#: .\server\apps\company\models.py:44
 msgid "cv"
 msgstr "cv"
 
-#: .\apps\company\models.py:46
+#: .\server\apps\company\models.py:46
 msgid "is proceed?"
 msgstr "İşlendimi?"
 
-#: .\apps\company\models.py:59
+#: .\server\apps\company\models.py:59
 msgid "question"
 msgstr "soru"
 
-#: .\apps\company\models.py:60
+#: .\server\apps\company\models.py:60
 msgid "answer"
 msgstr "cevap"
 
-#: .\apps\company\models.py:63 .\apps\company\models.py:64
+#: .\server\apps\company\models.py:63 .\server\apps\company\models.py:64
 msgid "FAQ"
 msgstr "SSS"
 
-#: .\apps\company\models.py:68
+#: .\server\apps\company\models.py:68
 msgid "placeholder"
 msgstr "yazı"
 
-#: .\apps\company\models.py:72
+#: .\server\apps\company\models.py:72
 msgid "quote"
 msgstr "söz"
 
-#: .\apps\company\models.py:75 .\apps\company\models.py:76
+#: .\server\apps\company\models.py:75 .\server\apps\company\models.py:76
 msgid "settings"
 msgstr "ayarlar"
 
-#: .\apps\company\templates\company\contact.django-html:14
+#: .\server\apps\company\templates\company\about.django-html:7
+#: .\server\templates\footer.django-html:46
+#: .\server\templates\header.django-html:142
+msgid "About us"
+msgstr "Hakkımızda"
+
+#: .\server\apps\company\templates\company\about.django-html:35
+msgid "Why We Do This"
+msgstr "Misyonumuz"
+
+#: .\server\apps\company\templates\company\about.django-html:38
+msgid ""
+"We aim to take the web-development industry to the absolutely new level."
+msgstr ""
+"Web-geliştirme alanında yeni nesil hizmet yaratmak için yola çıktık. Müşteri "
+"kitlemize önem vererek güvenli bir ortaklık oluşturmaktır aslında hedefimiz."
+
+#: .\server\apps\company\templates\company\about.django-html:40
+msgid "Is this not enough?"
+msgstr " "
+
+#: .\server\apps\company\templates\company\about.django-html:43
+msgid "See Our Blog"
+msgstr "Blogumuzu okuyumak için tıklayın"
+
+#: .\server\apps\company\templates\company\about.django-html:53
+msgid "How did we start"
+msgstr "Herşey nasıl başladı?"
+
+#: .\server\apps\company\templates\company\about.django-html:56
+msgid ""
+"We started providing services relatively recently and suddenly, despite the "
+"fact that we studied the market for many years and made conclusions."
+msgstr ""
+"Yazılım sektöründe uzun bir yol geçtiğimize rağmen stüdyo oluşturma fikri "
+"aniden bizim çoğu konuda görüşlerimizi değiştirdi. Artık herşey eskisi gibi "
+"olmayacak."
+
+#: .\server\apps\company\templates\company\about.django-html:70
+msgid ""
+"Let's create progressive software solutions for your bussiness together!"
+msgstr "Bizime işletmenizi dijitalleştirin ve her anlamda tasarruf edin."
+
+#: .\server\apps\company\templates\company\about.django-html:77
+msgid ""
+"We love our work and respect our clients, doing everything for their "
+"business. Terms, prices, conditions - everything is projected only for the "
+"convenience and quality of service."
+msgstr ""
+"İşimizi zevkle yapıyoruz ve müşterilerimiz daima bizim için önemli - bu site "
+"ve yaptığımız herşey kolaylık ve hizmet kalitesi için tasarlandı."
+
+#: .\server\apps\company\templates\company\about.django-html:88
+msgid "What we did?"
+msgstr "Biz neler yaptık?"
+
+#: .\server\apps\company\templates\company\about.django-html:142
+msgid "Employee"
+msgstr "Çalışan"
+
+#: .\server\apps\company\templates\company\about.django-html:149
+msgid "Projects"
+msgstr "Proje"
+
+#: .\server\apps\company\templates\company\about.django-html:156
+msgid "Earning"
+msgstr "Kazanç"
+
+#: .\server\apps\company\templates\company\about.django-html:163
+msgid "Happy clients"
+msgstr "Mutlu müşteri"
+
+#: .\server\apps\company\templates\company\contact.django-html:14
 msgid "Call us!"
 msgstr "Bizi arayın!"
 
-#: .\apps\company\templates\company\contact.django-html:18
-#: .\apps\company\templates\company\home.django-html:22
-#: .\templates\header.django-html:17 .\templates\header.django-html:128
+#: .\server\apps\company\templates\company\contact.django-html:18
+#: .\server\apps\company\templates\company\home.django-html:22
+#: .\server\apps\posts\templates\posts\detail.django-html:18
+#: .\server\apps\posts\templates\posts\list.django-html:20
+#: .\server\apps\users\templates\users\login.django-html:19
+#: .\server\apps\users\templates\users\register.django-html:20
+#: .\server\templates\footer.django-html:42
+#: .\server\templates\header.django-html:17
+#: .\server\templates\header.django-html:128
 msgid "Home page"
 msgstr "Ana sayfa"
 
-#: .\apps\company\templates\company\contact.django-html:20
-#: .\templates\header.django-html:35 .\templates\header.django-html:137
+#: .\server\apps\company\templates\company\contact.django-html:20
+#: .\server\templates\footer.django-html:47
+#: .\server\templates\header.django-html:35
+#: .\server\templates\header.django-html:137
 msgid "Contact us"
 msgstr "İletişim"
 
-#: .\apps\company\templates\company\contact.django-html:31
+#: .\server\apps\company\templates\company\contact.django-html:31
 msgid "Our contact  information"
 msgstr "İletişim bilgilerimiz"
 
-#: .\apps\company\templates\company\contact.django-html:33
+#: .\server\apps\company\templates\company\contact.django-html:33
 msgid "Call us to get answers for your questions!"
 msgstr "Sorularınıza cevap almak için bize ulaşınız!"
 
-#: .\apps\company\templates\company\contact.django-html:52
+#: .\server\apps\company\templates\company\contact.django-html:52
 msgid "Phone number"
 msgstr "Telefon numarası"
 
-#: .\apps\company\templates\company\contact.django-html:67
-#: .\templates\footer.django-html:24
+#: .\server\apps\company\templates\company\contact.django-html:67
+#: .\server\templates\footer.django-html:24
 msgid "E-mail"
 msgstr "E-posta"
 
-#: .\apps\company\templates\company\contact.django-html:81
+#: .\server\apps\company\templates\company\contact.django-html:81
 msgid "Address"
 msgstr "Adres"
 
-#: .\apps\company\templates\company\contact.django-html:101
+#: .\server\apps\company\templates\company\contact.django-html:102
 msgid "Feedback form"
 msgstr "Geri dönüş formu"
 
-#: .\apps\company\templates\company\contact.django-html:104
+#: .\server\apps\company\templates\company\contact.django-html:105
+#: .\server\apps\posts\templates\posts\detail.django-html:116
 msgid "Submit"
 msgstr "Gönder"
 
-#: .\apps\company\templates\company\contact.django-html:119
+#: .\server\apps\company\templates\company\contact.django-html:120
 msgid "Thanks for this information! We'll email you within a hour."
 msgstr ""
 "Bilgileriniz için teşekkür ederiz! Bir saat içinde eposta göndereceğiz."
 
-#: .\apps\company\templates\company\contact.django-html:120
+#: .\server\apps\company\templates\company\contact.django-html:121
 msgid "For faster feedback try to call phone number."
 msgstr "Daha seri görü dönüş için direk numaramızı arayınız!"
 
-#: .\apps\company\templates\company\home.django-html:37
+#: .\server\apps\company\templates\company\home.django-html:37
 msgid "IT-solutions for your bussiness"
 msgstr "Yeni nesil yazılım hizmeti"
 
-#: .\apps\company\templates\company\home.django-html:47
+#: .\server\apps\company\templates\company\home.django-html:47
 msgid "Smart-contracts"
 msgstr "Smart-contract"
 
-#: .\apps\company\templates\company\home.django-html:51
-#: .\apps\company\templates\company\home.django-html:202
+#: .\server\apps\company\templates\company\home.django-html:51
+#: .\server\apps\company\templates\company\home.django-html:202
 msgid "Web-sites"
 msgstr "Web-siteleri"
 
-#: .\apps\company\templates\company\home.django-html:54
+#: .\server\apps\company\templates\company\home.django-html:54
 msgid "Design"
 msgstr "Tasarım"
 
-#: .\apps\company\templates\company\home.django-html:57
+#: .\server\apps\company\templates\company\home.django-html:57
 msgid "SEO-optimization"
 msgstr "SEO-çalışmaları"
 
-#: .\apps\company\templates\company\home.django-html:60
-#: .\apps\company\templates\company\home.django-html:181
+#: .\server\apps\company\templates\company\home.django-html:60
+#: .\server\apps\company\templates\company\home.django-html:181
 msgid "Mobile applications"
 msgstr "Mobil uygulama"
 
-#: .\apps\company\templates\company\home.django-html:63
+#: .\server\apps\company\templates\company\home.django-html:63
 msgid "Chat-bots"
 msgstr "Chat-botları"
 
-#: .\apps\company\templates\company\home.django-html:84
+#: .\server\apps\company\templates\company\home.django-html:84
 msgid "Fixed terms"
 msgstr "Hızlı sürede kaliteli performans"
 
-#: .\apps\company\templates\company\home.django-html:87
+#: .\server\apps\company\templates\company\home.django-html:87
 msgid "Our team sets exact deadlines and strictly adheres to them."
 msgstr "Ekibimiz deadlineları uzatmadan projenizi en iyi şekilde tamamlar"
 
-#: .\apps\company\templates\company\home.django-html:104
+#: .\server\apps\company\templates\company\home.django-html:104
 msgid "Everything under your control"
 msgstr "Herşey sizin kontrolünüzde"
 
-#: .\apps\company\templates\company\home.django-html:107
+#: .\server\apps\company\templates\company\home.django-html:107
 msgid "Track the development process of your project at every stage."
 msgstr "Her adımda projenizin yazılımını takip ederek kontrol edin"
 
-#: .\apps\company\templates\company\home.django-html:124
-#: .\apps\company\templates\company\home.django-html:315
+#: .\server\apps\company\templates\company\home.django-html:124
+#: .\server\apps\company\templates\company\home.django-html:315
 msgid "7/24 support"
 msgstr "7/24 destek"
 
-#: .\apps\company\templates\company\home.django-html:127
+#: .\server\apps\company\templates\company\home.django-html:127
 msgid "We are always happy to help with any questions."
 msgstr "Oluşabilecek sorulanızı cevaplamaktan memnuniyet duyarız"
 
-#: .\apps\company\templates\company\home.django-html:162
+#: .\server\apps\company\templates\company\home.django-html:162
 msgid "What do we do?"
 msgstr "Biz ne yapabiliriz?"
 
-#: .\apps\company\templates\company\home.django-html:165
+#: .\server\apps\company\templates\company\home.django-html:165
 msgid "Our team provides services in various areas"
 msgstr "Ekibimiz birçok alanda yazılım ve destek hizmetleri veriyor"
 
-#: .\apps\company\templates\company\home.django-html:221
+#: .\server\apps\company\templates\company\home.django-html:221
 msgid "Smart-contracts and Dapps"
-msgstr "Smart-contract ve blokchain yazılımları"
+msgstr "Smart-contract ve blockhain yazılımları"
 
-#: .\apps\company\templates\company\home.django-html:240
+#: .\server\apps\company\templates\company\home.django-html:240
 msgid "SAAS products"
 msgstr "SAAS yazılımları"
 
-#: .\apps\company\templates\company\home.django-html:262
+#: .\server\apps\company\templates\company\home.django-html:262
 msgid "Learn more about Hooli Software in the next section"
 msgstr "Bizi daha yakından tanımak için sonraki bölümü okuyun"
 
-#: .\apps\company\templates\company\home.django-html:264
+#: .\server\apps\company\templates\company\home.django-html:264
 msgid "Frequently asked"
 msgstr "Sıkça sorulan"
 
-#: .\apps\company\templates\company\home.django-html:264
+#: .\server\apps\company\templates\company\home.django-html:264
 msgid "questions"
 msgstr "sorular"
 
-#: .\apps\company\templates\company\home.django-html:298
+#: .\server\apps\company\templates\company\home.django-html:298
 msgid "Catalog"
 msgstr "Katalog"
 
-#: .\apps\company\templates\company\home.django-html:300
+#: .\server\apps\company\templates\company\home.django-html:300
 msgid "Actual list of Hooli Software services for 2023"
 msgstr "2023 yılı için Hooli Software resmi hizmet koşulları dokümanı"
 
-#: .\apps\company\templates\company\home.django-html:302
+#: .\server\apps\company\templates\company\home.django-html:302
 msgid "Download"
 msgstr "İndir"
 
-#: .\apps\company\templates\company\home.django-html:318
+#: .\server\apps\company\templates\company\home.django-html:318
 msgid "Have questions? Our team will be happy to answer."
 msgstr "Bizi arayıp daima ulaşabilirsiniz."
 
-#: .\apps\company\templates\company\home.django-html:322
+#: .\server\apps\company\templates\company\home.django-html:322
 msgid "Maximum delay"
 msgstr "Maksimum geri dönüş süresi"
 
-#: .\apps\company\templates\company\home.django-html:322
+#: .\server\apps\company\templates\company\home.django-html:322
 msgid "hours"
 msgstr "saat"
 
-#: .\apps\company\templates\company\home.django-html:340
+#: .\server\apps\company\templates\company\home.django-html:340
 msgid "To maintainable SOFTWARE - to bright FUTURE"
 msgstr ""
 
-#: .\apps\company\templates\company\home.django-html:343
+#: .\server\apps\company\templates\company\home.django-html:343
 msgid "Start work with us!"
 msgstr "Bizimle çalışmak istermisin?"
 
-#: .\apps\company\templates\company\home.django-html:347
-#: .\templates\header.django-html:80
+#: .\server\apps\company\templates\company\home.django-html:347
+#: .\server\templates\header.django-html:80
 msgid "Create order"
 msgstr "Sıpariş oluştur"
 
-#: .\apps\posts\admin.py:15
+#: .\server\apps\posts\admin.py:15
 msgid "Content information"
 msgstr ""
 
-#: .\apps\posts\admin.py:24
+#: .\server\apps\posts\admin.py:24
 msgid "Post information"
 msgstr ""
 
-#: .\apps\posts\apps.py:7 .\apps\posts\models.py:54
+#: .\server\apps\posts\apps.py:7 .\server\apps\posts\models.py:54
 msgid "posts"
 msgstr "haberler"
 
-#: .\apps\posts\models.py:9
+#: .\server\apps\posts\models.py:9
 msgid "category name"
 msgstr ""
 
-#: .\apps\posts\models.py:10
+#: .\server\apps\posts\models.py:10
 msgid "parent category"
 msgstr ""
 
-#: .\apps\posts\models.py:14
+#: .\server\apps\posts\models.py:14
 msgid "category"
 msgstr ""
 
-#: .\apps\posts\models.py:15
+#: .\server\apps\posts\models.py:15
 msgid "categories"
 msgstr ""
 
-#: .\apps\posts\models.py:25
+#: .\server\apps\posts\models.py:25
 msgid "tag name"
 msgstr ""
 
-#: .\apps\posts\models.py:29
+#: .\server\apps\posts\models.py:29
 msgid "tag"
 msgstr ""
 
-#: .\apps\posts\models.py:30
+#: .\server\apps\posts\models.py:30
 msgid "tags"
 msgstr ""
 
-#: .\apps\posts\models.py:40
+#: .\server\apps\posts\models.py:40
 msgid "content"
 msgstr ""
 
-#: .\apps\posts\models.py:41
+#: .\server\apps\posts\models.py:41
 msgid "creation date"
 msgstr ""
 
-#: .\apps\posts\models.py:42
+#: .\server\apps\posts\models.py:42
 msgid "is post published?"
 msgstr ""
 
-#: .\apps\posts\models.py:43
+#: .\server\apps\posts\models.py:43
 msgid "reading duration"
 msgstr ""
 
-#: .\apps\posts\models.py:45
+#: .\server\apps\posts\models.py:45
 msgid "thumbnail"
 msgstr ""
 
-#: .\apps\posts\models.py:46
+#: .\server\apps\posts\models.py:46
 msgid "title"
 msgstr ""
 
-#: .\apps\posts\models.py:53
+#: .\server\apps\posts\models.py:53
 msgid "post"
 msgstr ""
 
-#: .\core\settings.py:123
-msgid "Russian"
-msgstr ""
+#: .\server\apps\posts\templates\posts\detail.django-html:52
+msgid "comments"
+msgstr "yorum"
 
-#: .\core\settings.py:124
-msgid "English"
-msgstr ""
+#: .\server\apps\posts\templates\posts\detail.django-html:53
+#: .\server\apps\posts\templates\posts\detail.django-html:90
+msgid "Leave comment"
+msgstr "Yorum yap"
 
-#: .\core\settings.py:125
-msgid "Turkish"
-msgstr ""
+#: .\server\apps\posts\templates\posts\detail.django-html:130
+msgid "Related articles"
+msgstr "Konu alakalı yazılar"
 
-#: .\templates\footer.django-html:22
-msgid "To get latest news"
-msgstr "En son güncel haberler alın"
+#: .\server\apps\posts\templates\posts\detail.django-html:174
+msgid "Popular categories"
+msgstr "Popüler kategori"
 
-#: .\templates\footer.django-html:28
-msgid "Subscribe"
-msgstr "Gönder"
+#: .\server\apps\posts\templates\posts\detail.django-html:188
+msgid "Popular tags"
+msgstr "Popüler tagler"
 
-#: .\templates\footer.django-html:32
-msgid "Not spam :)"
-msgstr "Kesinlikle spam değildir :)"
+#: .\server\apps\posts\templates\posts\detail.django-html:200
+msgid "Recent posts"
+msgstr "En son haberler"
 
-#: .\templates\footer.django-html:40
-msgid "Important links"
-msgstr "Sayfalar"
+#: .\server\apps\posts\templates\posts\list.django-html:16
+msgid "Our blog"
+msgstr "Blogumuz"
 
-#: .\templates\footer.django-html:55
-msgid "Ecosystem"
-msgstr "Ekosistem"
-
-#: .\templates\footer.django-html:70
-msgid "Top-customers"
-msgstr "Bu ayın müşterileri"
-
-#: .\templates\footer.django-html:81 .\templates\footer.django-html:94
-#: .\templates\footer.django-html:107
-msgid "orders"
-msgstr "sıpariş"
-
-#: .\templates\footer.django-html:121
-msgid "Available languages :"
-msgstr "Mevcut diller :"
-
-#: .\templates\footer.django-html:149
-msgid "All rights reserved."
-msgstr "Bütün haklar saklıdır."
-
-#: .\templates\footer.django-html:151
-msgid "Privacy Policy"
-msgstr "Kullanım koşulları"
-
-#: .\templates\header.django-html:20 .\templates\header.django-html:131
-msgid "Services"
-msgstr "Hizmetler"
-
-#: .\templates\header.django-html:23 .\templates\header.django-html:134
+#: .\server\apps\posts\templates\posts\list.django-html:22
+#: .\server\templates\footer.django-html:44
+#: .\server\templates\header.django-html:23
+#: .\server\templates\header.django-html:134
 msgid "Blog"
 msgstr "Blog"
 
-#: .\templates\header.django-html:26 .\templates\header.django-html:140
-msgid "More"
-msgstr "Daha fazla"
+#: .\server\apps\posts\templates\posts\list.django-html:67
+msgid "Previous"
+msgstr "Önceki"
 
-#: .\templates\header.django-html:28
-msgid "About"
-msgstr "Hakkımızda"
+#: .\server\apps\posts\templates\posts\list.django-html:71
+msgid "Next"
+msgstr "Sonraki"
 
-#: .\templates\header.django-html:29 .\templates\header.django-html:143
+#: .\server\apps\users\templates\users\login.django-html:7
+#: .\server\apps\users\templates\users\login.django-html:21
+#: .\server\apps\users\templates\users\login.django-html:32
+#: .\server\apps\users\templates\users\register.django-html:48
+msgid "Sign-in"
+msgstr "Giriş yap"
+
+#: .\server\apps\users\templates\users\login.django-html:15
+msgid "Hooli Software sign-in"
+msgstr "Hooli Software giriş"
+
+#: .\server\apps\users\templates\users\oauth-card.django-html:7
+msgid "Another way to log in"
+msgstr "Diğer seçenekler"
+
+#: .\server\apps\users\templates\users\oauth-card.django-html:8
+msgid "- There is always a better way"
+msgstr "- Her zaman kolay yol vardır"
+
+#: .\server\apps\users\templates\users\oauth-card.django-html:13
+msgid "Sign-up with Google"
+msgstr "Google ile giriş yap"
+
+#: .\server\apps\users\templates\users\oauth-card.django-html:19
+msgid "Sign-up with Vkontakte"
+msgstr "Vkontakte ile giriş yap"
+
+#: .\server\apps\users\templates\users\register.django-html:7
+#: .\server\apps\users\templates\users\register.django-html:22
+#: .\server\apps\users\templates\users\register.django-html:33
+#: .\server\apps\users\templates\users\register.django-html:47
+msgid "Sign-up"
+msgstr "Kayıt ol"
+
+#: .\server\apps\users\templates\users\register.django-html:16
+msgid "Hooli Software sign-up"
+msgstr "Hooli Software kayıt oluşturma"
+
+#: .\server\core\settings.py:133
+msgid "Russian"
+msgstr "Rusça"
+
+#: .\server\core\settings.py:134
+msgid "English"
+msgstr "İngilizce"
+
+#: .\server\core\settings.py:135
+msgid "Turkish"
+msgstr "Türkçe"
+
+#: .\server\templates\footer.django-html:22
+msgid "To get latest news"
+msgstr "En son güncel haberler alın"
+
+#: .\server\templates\footer.django-html:28
+msgid "Subscribe"
+msgstr "Gönder"
+
+#: .\server\templates\footer.django-html:32
+msgid "Not spam :)"
+msgstr "Kesinlikle spam değildir :)"
+
+#: .\server\templates\footer.django-html:40
+msgid "Important links"
+msgstr "Sayfalar"
+
+#: .\server\templates\footer.django-html:43
+#: .\server\templates\header.django-html:20
+#: .\server\templates\header.django-html:131
+msgid "Services"
+msgstr "Hizmetler"
+
+#: .\server\templates\footer.django-html:45
+#: .\server\templates\header.django-html:29
+#: .\server\templates\header.django-html:143
 msgid "Forum"
 msgstr "Forum"
 
-#: .\templates\header.django-html:30 .\templates\header.django-html:144
+#: .\server\templates\footer.django-html:48
+#: .\server\templates\header.django-html:32
+#: .\server\templates\header.django-html:146
+msgid "Distribute"
+msgstr "Distribütör ol"
+
+#: .\server\templates\footer.django-html:55
+msgid "Ecosystem"
+msgstr "Ekosistem"
+
+#: .\server\templates\footer.django-html:64
+msgid "Top-customers"
+msgstr "Bu ayın müşterileri"
+
+#: .\server\templates\footer.django-html:75
+#: .\server\templates\footer.django-html:88
+#: .\server\templates\footer.django-html:101
+msgid "orders"
+msgstr "sıpariş"
+
+#: .\server\templates\footer.django-html:115
+msgid "Available languages :"
+msgstr "Mevcut diller :"
+
+#: .\server\templates\footer.django-html:143
+msgid "All rights reserved."
+msgstr "Bütün haklar saklıdır."
+
+#: .\server\templates\footer.django-html:145
+msgid "Privacy Policy"
+msgstr "Kullanım koşulları"
+
+#: .\server\templates\header.django-html:26
+#: .\server\templates\header.django-html:140
+msgid "More"
+msgstr "Daha fazla"
+
+#: .\server\templates\header.django-html:28
+msgid "About"
+msgstr "Hakkımızda"
+
+#: .\server\templates\header.django-html:30
+#: .\server\templates\header.django-html:144
 msgid "Vacancies"
 msgstr "İş ilanları"
 
-#: .\templates\header.django-html:31 .\templates\header.django-html:145
+#: .\server\templates\header.django-html:31
+#: .\server\templates\header.django-html:145
 msgid "Donate"
 msgstr "Bağış"
 
-#: .\templates\header.django-html:32 .\templates\header.django-html:146
-msgid "Referral system"
-msgstr "Referans sistemi"
-
-#: .\templates\header.django-html:44
+#: .\server\templates\header.django-html:44
 msgid "Search"
 msgstr "Arama yap"
 
-#: .\templates\header.django-html:76
+#: .\server\templates\header.django-html:76
 msgid "Balance"
 msgstr "Bakiye"
 
-#: .\templates\header.django-html:77
+#: .\server\templates\header.django-html:77
 msgid "Points"
 msgstr "Puanlar"
 
-#: .\templates\header.django-html:83
+#: .\server\templates\header.django-html:83
 msgid "Profile settings"
 msgstr "Profil ayarları"
 
-#: .\templates\header.django-html:84
+#: .\server\templates\header.django-html:84
 msgid "My bussiness"
 msgstr "Sıparişlerim"
 
-#: .\templates\header.django-html:85
+#: .\server\templates\header.django-html:85
 msgid "Logout"
 msgstr "Çıkış yap"
 
-#: .\templates\header.django-html:92
+#: .\server\templates\header.django-html:92
 msgid "Login"
 msgstr "Giriş yap"
-
-#: .\templates\header.django-html:142
-msgid "About us"
-msgstr "Hakkımızda"
 
 #~ msgid "setttings"
 #~ msgstr "ayarlar"

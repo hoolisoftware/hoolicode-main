@@ -23,7 +23,7 @@
         </div>
     </div>
 </div>
-<div class="rn-contact-top-area rn-section-gapTop bg_color--5">
+<div class="rn-contact-top-area rn-section-gapTop bg_color--5 pb--50">
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-12 sal-animate" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
@@ -65,7 +65,7 @@
                     </div>
                     <div class="inner">
                         <h4 class="title">{% translate 'E-mail' %}</h4>
-                        <p><a href="mailto:admin@gmail.com">admin@gmail.com</a></p>
+                        <p><a href="mailto:support@hoolisoftware.xyz">support@hoolisoftware.xyz</a></p>
                     </div>
                 </div>
             </div>
@@ -86,6 +86,7 @@
         </div>
     </div>
 </div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d762.9807576152573!2d29.419073429214226!3d40.09942899871272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cbcbf49640171d%3A0x662b78722ddb2026!2sHooli%20Software!5e0!3m2!1sru!2str!4v1675426399654!5m2!1sru!2str" width="600" height="450" style="border:0; border-radius: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 <div class="login-area message-area rn-section-gapTop">
     <div class="container">
         <div class="row g-5">

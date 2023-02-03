@@ -39,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.vk',
+    'allauth.socialaccount.providers.google',
     'captcha',
     "drf_recaptcha",
     'django_summernote',
@@ -93,6 +98,11 @@ DATABASES = {
 }
 
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -145,6 +155,21 @@ LOGOUT_REDIRECT_URL = 'company:home'
 
 LOGIN_URL = 'users:login'
 LOGOUT_URL = 'users:logout'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+SOCIALACCOUNT_PROVIDERS = {
+    # 'google': {
+    #     # For each OAuth based provider, either add a ``SocialApp``
+    #     # (``socialaccount`` app) containing the required client
+    #     # credentials, or list them here:
+    #     'APP': {
+    #         'client_id': '84964811581-oq9nnakcs9p7a7hfaipl82h9sv0vgfpq.apps.googleusercontent.com',
+    #         'secret': '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',
+    #         'key': ''
+    #     }
+    # }
+}
 
 RECAPTCHA_PUBLIC_KEY = env('RECAPTCHA_PUBLIC_KEY')
 RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY')

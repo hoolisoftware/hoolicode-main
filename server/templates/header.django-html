@@ -29,7 +29,7 @@
                                     <li><a href="#">{% translate 'Forum' %}<i class="feather-fast-forward"></i></a></li>
                                     <li><a href="{% url 'company:vacancy-list' %}">{% translate 'Vacancies' %}<i class="feather-fast-forward"></i></a></li>
                                     <li><a href="#">{% translate 'Donate' %}<i class="feather-fast-forward"></i></a></li>
-                                    <li><a href="#">{% translate 'Referral system' %}<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="#">{% translate 'Distribute' %}<i class="feather-fast-forward"></i></a></li>
                                 </ul>
                             </li>
                             <li><a href="{% url 'company:contact' %}">{% translate 'Contact us' %}</a></li>
@@ -143,7 +143,7 @@
                         <li><a href="#">{% translate 'Forum' %}<i class="feather-fast-forward"></i></a></li>
                         <li><a href="{% url 'company:vacancy-list' %}">{% translate 'Vacancies' %}<i class="feather-fast-forward"></i></a></li>
                         <li><a href="#">{% translate 'Donate' %}<i class="feather-fast-forward"></i></a></li>
-                        <li><a href="#">{% translate 'Referral system' %}<i class="feather-fast-forward"></i></a></li>
+                        <li><a href="#">{% translate 'Distribute' %}<i class="feather-fast-forward"></i></a></li>
                     </ul>
                 </li>
             </ul>

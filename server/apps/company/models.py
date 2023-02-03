@@ -70,6 +70,7 @@ class Feature(models.Model):
 
 class Settings(SingletonModel): 
     quote = models.TextField(_('quote'))
+    email_support = models.EmailField(_('support email'))
     
     class Meta:
         verbose_name = _('settings')

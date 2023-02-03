@@ -1,0 +1,23 @@
+{% load static %}
+{% load i18n %}
+{% load account socialaccount %}
+
+<div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="social-share-media form-wrapper-one">
+        <h6>{% translate 'Another way to log in' %}</h6>
+        <p>{% translate '- There is always a better way' %}</p>
+        {% get_providers as socialaccount_providers %}
+        <a href="{% provider_login_url 'google' %}"> 
+            <button class="another-login login-facebook mb--10">
+                <img class="small-image" src="{% static '' %}images/icons/google.png" alt=""> 
+                <span>{% translate 'Sign-up with Google' %}</span>
+            </button>
+        </a>
+        <a href="{% provider_login_url 'google' %}"> 
+            <button class="another-login login-facebook mb--10">
+                <img class="small-image" src="{% static '' %}images/icons/facebook.png" alt=""> 
+                <span>{% translate 'Sign-up with Vkontakte' %}</span>
+            </button>
+        </a>
+    </div>
+</div>

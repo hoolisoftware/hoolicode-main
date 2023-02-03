@@ -9,7 +9,7 @@
                 <div class="widget-content-wrapper">
                     <div class="footer-left">
                         <div class="logo-thumbnail logo-custom-css">
-                            <a class="logo-light" href="#"><img 
+                            <a class="logo-light" href="{% url 'company:home' %}"><img 
                                 style="max-height: initial; width: 100%" src="{% static '' %}images/logo/hooli-logo-big.svg"
                                 alt="nft-logo">
                             </a>
@@ -39,13 +39,13 @@
                 <div class="footer-widget widget-quicklink">
                     <h6 class="widget-title">{% translate 'Important links' %}</h6>
                     <ul class="footer-list-one">
-                        <li class="single-list"><a href="#">Protocol Explore</a></li>
-                        <li class="single-list"><a href="#">System Token</a></li>
-                        <li class="single-list"><a href="#">Otimize Time</a></li>
-                        <li class="single-list"><a href="#">Visual Checking</a></li>
-                        <li class="single-list"><a href="#">Fadeup System</a></li>
-                        <li class="single-list"><a href="#">Activity Log</a></li>
-                        <li class="single-list"><a href="#">System Auto Since</a></li>
+                        <li class="single-list"><a href="{% url 'company:home' %}">{% translate 'Home page' %}</a></li>
+                        <li class="single-list"><a href="#">{% translate 'Services' %}</a></li>
+                        <li class="single-list"><a href="{% url 'posts:list' %}">{% translate 'Blog' %}</a></li>
+                        <li class="single-list"><a href="#">{% translate 'Forum' %}</a></li>
+                        <li class="single-list"><a href="#">{% translate 'About us' %}</a></li>
+                        <li class="single-list"><a href="#">{% translate 'Contact us' %}</a></li>
+                        <li class="single-list"><a href="#">{% translate 'Distribute' %}</a></li>
                     </ul>
                 </div>
             </div>
@@ -54,13 +54,7 @@
                 <div class="footer-widget widget-information">
                     <h6 class="widget-title">{% translate 'Ecosystem' %}</h6>
                     <ul class="footer-list-one">
-                        <li class="single-list"><a href="#">Market Explore</a></li>
-                        <li class="single-list"><a href="#">Ready Token</a></li>
-                        <li class="single-list"><a href="#">Main Option</a></li>
-                        <li class="single-list"><a href="#">Product Checking</a></li>
-                        <li class="single-list"><a href="#">Blog Grid</a></li>
-                        <li class="single-list"><a href="#">About Us</a></li>
-                        <li class="single-list"><a href="#">Fix Bug </a></li>
+                        <li class="single-list"><a href="#">Coming soon...</a></li>
                     </ul>
                 </div>
             </div>
