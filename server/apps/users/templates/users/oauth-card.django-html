@@ -13,7 +13,7 @@
                 <span>{% translate 'Sign-up with Google' %}</span>
             </button>
         </a>
-        <a href="{% provider_login_url 'google' %}"> 
+        <a href="{% provider_login_url 'vk' %}"> 
             <button class="another-login login-facebook mb--10">
                 <img class="small-image" src="{% static '' %}images/icons/facebook.png" alt=""> 
                 <span>{% translate 'Sign-up with Vkontakte' %}</span>
