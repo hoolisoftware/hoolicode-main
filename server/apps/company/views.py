@@ -14,6 +14,14 @@ class ContactView(generic.TemplateView, generic.FormView):
     form_class = forms.FeedbackRequestForm
     template_name = 'company/contact.django-html'
 
+class PortfolioListView(generic.ListView):
+    model = models.Project
+    template_name = 'company/portfolio-list.django-html'
+
+class PortfolioDetailView(generic.DetailView):
+    model = models.Project
+    template_name = 'company/portfolio-detail.django-html'
+
 class VacancyListView(generic.ListView):
     model = models.Vacancy
     template_name = 'company/vacancy-list.django-html'
@@ -22,3 +30,6 @@ class VacancyDetailView(generic.DetailView, generic.FormView):
     model = models.Vacancy
     form_class = forms.VacancyRequestForm
     template_name = 'company/vacancy-detail.django-html'
+
+class TestView(generic.TemplateView):
+    template_name = 'test.django-html'

@@ -7,7 +7,7 @@ from django.forms import Form, ModelForm
 from django.core.exceptions import ValidationError
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import PasswordChangeForm as BasePasswordChangeForm
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 from core.mixins import AddClassNameMixin
 

@@ -4,6 +4,13 @@ from . import models
 
 @admin.register(models.User)
 class UserAdmin(admin.ModelAdmin):
+    list_display = (
+        'username',
+        'email',
+        'account_type',
+        'balance',
+        'xp',
+    )
     fieldsets = (
         (
             'Personal Info', 

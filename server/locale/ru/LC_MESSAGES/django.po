@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-03 17:15+0300\n"
+"POT-Creation-Date: 2023-02-04 02:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,104 +20,135 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\server\apps\company\apps.py:7
+#: .\apps\company\apps.py:7
 msgid "company"
 msgstr "компания"
 
-#: .\server\apps\company\models.py:26
+#: .\apps\company\models.py:26
 msgid "position"
 msgstr "позиция"
 
-#: .\server\apps\company\models.py:28
+#: .\apps\company\models.py:28
 msgid "salary"
 msgstr "зарплата"
 
-#: .\server\apps\company\models.py:29
+#: .\apps\company\models.py:29
 msgid "description"
 msgstr "описание"
 
-#: .\server\apps\company\models.py:33
+#: .\apps\company\models.py:33
 msgid "vacancy"
 msgstr "вакансия"
 
-#: .\server\apps\company\models.py:34
+#: .\apps\company\models.py:34
 msgid "vacancies"
 msgstr "вакансии"
 
-#: .\server\apps\company\models.py:41 .\server\apps\company\models.py:50
+#: .\apps\company\models.py:41 .\apps\company\models.py:54
 msgid "full name"
 msgstr "имя фамилия"
 
-#: .\server\apps\company\models.py:42 .\server\apps\company\models.py:51
+#: .\apps\company\models.py:42 .\apps\company\models.py:55
 msgid "e-mail"
 msgstr "Почта"
 
-#: .\server\apps\company\models.py:43
+#: .\apps\company\models.py:43 .\apps\company\models.py:57
 msgid "message"
 msgstr "сообщение"
 
-#: .\server\apps\company\models.py:44
+#: .\apps\company\models.py:44
 msgid "cv"
 msgstr "резюме"
 
-#: .\server\apps\company\models.py:46
+#: .\apps\company\models.py:46 .\apps\company\models.py:59
 msgid "is proceed?"
 msgstr "обработано?"
 
-#: .\server\apps\company\models.py:59
+#: .\apps\company\models.py:49
+msgid "vacancy request"
+msgstr "отклик на вакансию"
+
+#: .\apps\company\models.py:50
+msgid "vacancy requests"
+msgstr "отклики на вакансии"
+
+#: .\apps\company\models.py:56
+msgid "subject"
+msgstr "тема"
+
+#: .\apps\company\models.py:62
+msgid "feedback request"
+msgstr "запрос обратной связи"
+
+#: .\apps\company\models.py:63
+msgid "feedback requests"
+msgstr "запросы обратной связи"
+
+#: .\apps\company\models.py:67
 msgid "question"
 msgstr "вопрос"
 
-#: .\server\apps\company\models.py:60
+#: .\apps\company\models.py:68
 msgid "answer"
 msgstr "ответ"
 
-#: .\server\apps\company\models.py:63 .\server\apps\company\models.py:64
+#: .\apps\company\models.py:71 .\apps\company\models.py:72
 msgid "FAQ"
 msgstr "ЧЗВ"
 
-#: .\server\apps\company\models.py:68
+#: .\apps\company\models.py:76
 msgid "placeholder"
 msgstr "плейсхолдер"
 
-#: .\server\apps\company\models.py:72
+#: .\apps\company\models.py:79
+msgid "feature"
+msgstr "фича"
+
+#: .\apps\company\models.py:80
+msgid "features"
+msgstr "фичи"
+
+#: .\apps\company\models.py:84
 msgid "quote"
 msgstr "девиз"
 
-#: .\server\apps\company\models.py:75 .\server\apps\company\models.py:76
+#: .\apps\company\models.py:85
+msgid "support email"
+msgstr "почта поддержки"
+
+#: .\apps\company\models.py:88 .\apps\company\models.py:89
 msgid "settings"
 msgstr "настройки"
 
-#: .\server\apps\company\templates\company\about.django-html:7
-#: .\server\templates\footer.django-html:46
-#: .\server\templates\header.django-html:142
+#: .\apps\company\templates\company\about.django-html:7
+#: .\templates\footer.django-html:46 .\templates\header.django-html:142
 msgid "About us"
 msgstr "О нас"
 
-#: .\server\apps\company\templates\company\about.django-html:35
+#: .\apps\company\templates\company\about.django-html:35
 msgid "Why We Do This"
 msgstr "В чём смысл бытия?"
 
-#: .\server\apps\company\templates\company\about.django-html:38
+#: .\apps\company\templates\company\about.django-html:38
 msgid ""
 "We aim to take the web-development industry to the absolutely new level."
 msgstr ""
 "Наша цель - дать клиентам небывалое качество сервиса, сэкономить им время, "
 "деньги, нервы (ведь они не восстанавливаются)."
 
-#: .\server\apps\company\templates\company\about.django-html:40
+#: .\apps\company\templates\company\about.django-html:40
 msgid "Is this not enough?"
 msgstr "Разве этого не достаточно?"
 
-#: .\server\apps\company\templates\company\about.django-html:43
+#: .\apps\company\templates\company\about.django-html:43
 msgid "See Our Blog"
 msgstr "Почитайте наш блог"
 
-#: .\server\apps\company\templates\company\about.django-html:53
+#: .\apps\company\templates\company\about.django-html:53
 msgid "How did we start"
 msgstr "Как всё началось?"
 
-#: .\server\apps\company\templates\company\about.django-html:56
+#: .\apps\company\templates\company\about.django-html:56
 msgid ""
 "We started providing services relatively recently and suddenly, despite the "
 "fact that we studied the market for many years and made conclusions."
@@ -125,13 +156,13 @@ msgstr ""
 "Идея создания веб-студии пришла резко и спонтанно, несмотря на то что мы в "
 "сфере уже несколько лет."
 
-#: .\server\apps\company\templates\company\about.django-html:70
+#: .\apps\company\templates\company\about.django-html:70
 msgid ""
 "Let's create progressive software solutions for your bussiness together!"
 msgstr ""
 "Мы приглашаем тебя диджитализировать твой бизнес вместе с нами, почти даром."
 
-#: .\server\apps\company\templates\company\about.django-html:77
+#: .\apps\company\templates\company\about.django-html:77
 msgid ""
 "We love our work and respect our clients, doing everything for their "
 "business. Terms, prices, conditions - everything is projected only for the "
@@ -140,475 +171,558 @@ msgstr ""
 "Мы любим свою работу и уважаем клиентов, доверие для нас - самый ценный "
 "ресурс."
 
-#: .\server\apps\company\templates\company\about.django-html:88
+#: .\apps\company\templates\company\about.django-html:88
 msgid "What we did?"
 msgstr "Какие у нас успехи?"
 
-#: .\server\apps\company\templates\company\about.django-html:142
+#: .\apps\company\templates\company\about.django-html:142
 msgid "Employee"
 msgstr "Работников"
 
-#: .\server\apps\company\templates\company\about.django-html:149
+#: .\apps\company\templates\company\about.django-html:149
 msgid "Projects"
 msgstr "Проектов"
 
-#: .\server\apps\company\templates\company\about.django-html:156
+#: .\apps\company\templates\company\about.django-html:156
 msgid "Earning"
 msgstr "Общий доход"
 
-#: .\server\apps\company\templates\company\about.django-html:163
+#: .\apps\company\templates\company\about.django-html:163
 msgid "Happy clients"
 msgstr "Довольных клиентов"
 
-#: .\server\apps\company\templates\company\contact.django-html:14
+#: .\apps\company\templates\company\contact.django-html:14
 msgid "Call us!"
 msgstr "Позвоните нам!"
 
-#: .\server\apps\company\templates\company\contact.django-html:18
-#: .\server\apps\company\templates\company\home.django-html:22
-#: .\server\apps\posts\templates\posts\detail.django-html:18
-#: .\server\apps\posts\templates\posts\list.django-html:20
-#: .\server\apps\users\templates\users\login.django-html:19
-#: .\server\apps\users\templates\users\register.django-html:20
-#: .\server\templates\footer.django-html:42
-#: .\server\templates\header.django-html:17
-#: .\server\templates\header.django-html:128
+#: .\apps\company\templates\company\contact.django-html:18
+#: .\apps\company\templates\company\home.django-html:22
+#: .\apps\posts\templates\posts\detail.django-html:18
+#: .\apps\posts\templates\posts\list.django-html:20
+#: .\apps\users\templates\users\login.django-html:19
+#: .\apps\users\templates\users\register.django-html:20
+#: .\templates\footer.django-html:42 .\templates\header.django-html:17
+#: .\templates\header.django-html:128
 msgid "Home page"
 msgstr "Главная"
 
-#: .\server\apps\company\templates\company\contact.django-html:20
-#: .\server\templates\footer.django-html:47
-#: .\server\templates\header.django-html:35
-#: .\server\templates\header.django-html:137
+#: .\apps\company\templates\company\contact.django-html:20
+#: .\templates\footer.django-html:47 .\templates\header.django-html:35
+#: .\templates\header.django-html:137
 msgid "Contact us"
 msgstr "Свяжитесь с нами"
 
-#: .\server\apps\company\templates\company\contact.django-html:31
+#: .\apps\company\templates\company\contact.django-html:31
 msgid "Our contact  information"
 msgstr "Контактная информация"
 
-#: .\server\apps\company\templates\company\contact.django-html:33
+#: .\apps\company\templates\company\contact.django-html:33
 msgid "Call us to get answers for your questions!"
 msgstr "Позвоните нам что бы получить ответы на ваши вопросы!"
 
-#: .\server\apps\company\templates\company\contact.django-html:52
+#: .\apps\company\templates\company\contact.django-html:52
 msgid "Phone number"
 msgstr "Номер телефона"
 
-#: .\server\apps\company\templates\company\contact.django-html:67
-#: .\server\templates\footer.django-html:24
+#: .\apps\company\templates\company\contact.django-html:67
+#: .\apps\users\forms.py:32 .\templates\footer.django-html:24
 msgid "E-mail"
 msgstr "Почта"
 
-#: .\server\apps\company\templates\company\contact.django-html:81
+#: .\apps\company\templates\company\contact.django-html:81
 msgid "Address"
 msgstr "Адрес"
 
-#: .\server\apps\company\templates\company\contact.django-html:102
+#: .\apps\company\templates\company\contact.django-html:102
 msgid "Feedback form"
 msgstr "Форма обратной связи"
 
-#: .\server\apps\company\templates\company\contact.django-html:105
-#: .\server\apps\posts\templates\posts\detail.django-html:116
+#: .\apps\company\templates\company\contact.django-html:105
+#: .\apps\posts\templates\posts\detail.django-html:116
 msgid "Submit"
 msgstr "Отправить"
 
-#: .\server\apps\company\templates\company\contact.django-html:120
+#: .\apps\company\templates\company\contact.django-html:120
 msgid "Thanks for this information! We'll email you within a hour."
 msgstr "Спасибо за информацию! Вы получите письмо на почту в течении часа."
 
-#: .\server\apps\company\templates\company\contact.django-html:121
+#: .\apps\company\templates\company\contact.django-html:121
 msgid "For faster feedback try to call phone number."
 msgstr "Для более быстрой обратной связи звоните на наш номер."
 
-#: .\server\apps\company\templates\company\home.django-html:37
+#: .\apps\company\templates\company\home.django-html:37
 msgid "IT-solutions for your bussiness"
 msgstr "Интегратор бизнес-решени"
 
-#: .\server\apps\company\templates\company\home.django-html:47
+#: .\apps\company\templates\company\home.django-html:47
 msgid "Smart-contracts"
 msgstr "Смарт-контракты"
 
-#: .\server\apps\company\templates\company\home.django-html:51
-#: .\server\apps\company\templates\company\home.django-html:202
+#: .\apps\company\templates\company\home.django-html:51
+#: .\apps\company\templates\company\home.django-html:202
 msgid "Web-sites"
 msgstr "Веб-сайты"
 
-#: .\server\apps\company\templates\company\home.django-html:54
+#: .\apps\company\templates\company\home.django-html:54
 msgid "Design"
 msgstr "Дизайн"
 
-#: .\server\apps\company\templates\company\home.django-html:57
+#: .\apps\company\templates\company\home.django-html:57
 msgid "SEO-optimization"
 msgstr "СЕО-оптимизация"
 
-#: .\server\apps\company\templates\company\home.django-html:60
-#: .\server\apps\company\templates\company\home.django-html:181
+#: .\apps\company\templates\company\home.django-html:60
+#: .\apps\company\templates\company\home.django-html:181
 msgid "Mobile applications"
 msgstr "Мобильные приложения"
 
-#: .\server\apps\company\templates\company\home.django-html:63
+#: .\apps\company\templates\company\home.django-html:63
 msgid "Chat-bots"
 msgstr "Чат-боты"
 
-#: .\server\apps\company\templates\company\home.django-html:84
+#: .\apps\company\templates\company\home.django-html:84
 msgid "Fixed terms"
 msgstr "Точные сроки"
 
-#: .\server\apps\company\templates\company\home.django-html:87
+#: .\apps\company\templates\company\home.django-html:87
 msgid "Our team sets exact deadlines and strictly adheres to them."
 msgstr "Наша команда определяет точные сроки и строго их придерживается."
 
-#: .\server\apps\company\templates\company\home.django-html:104
+#: .\apps\company\templates\company\home.django-html:104
 msgid "Everything under your control"
 msgstr "Прозрачность разработки"
 
-#: .\server\apps\company\templates\company\home.django-html:107
+#: .\apps\company\templates\company\home.django-html:107
 msgid "Track the development process of your project at every stage."
 msgstr "Отслеживайте процесс разработки вашего проекта на каждом этапе."
 
-#: .\server\apps\company\templates\company\home.django-html:124
-#: .\server\apps\company\templates\company\home.django-html:315
+#: .\apps\company\templates\company\home.django-html:124
+#: .\apps\company\templates\company\home.django-html:315
 msgid "7/24 support"
 msgstr "Поддержка 7/24"
 
-#: .\server\apps\company\templates\company\home.django-html:127
+#: .\apps\company\templates\company\home.django-html:127
 msgid "We are always happy to help with any questions."
 msgstr "Мы всегда рады помочь в любых ваших вопросах."
 
-#: .\server\apps\company\templates\company\home.django-html:162
+#: .\apps\company\templates\company\home.django-html:162
 msgid "What do we do?"
 msgstr "Над чем мы работаем?"
 
-#: .\server\apps\company\templates\company\home.django-html:165
+#: .\apps\company\templates\company\home.django-html:165
 msgid "Our team provides services in various areas"
 msgstr "Наша команда предоставляет услуги в различных сферах"
 
-#: .\server\apps\company\templates\company\home.django-html:221
+#: .\apps\company\templates\company\home.django-html:221
 msgid "Smart-contracts and Dapps"
 msgstr "Смарт-контракты и децентрализированные приложения"
 
-#: .\server\apps\company\templates\company\home.django-html:240
+#: .\apps\company\templates\company\home.django-html:240
 msgid "SAAS products"
 msgstr "SAAS продукты"
 
-#: .\server\apps\company\templates\company\home.django-html:262
+#: .\apps\company\templates\company\home.django-html:262
 msgid "Learn more about Hooli Software in the next section"
 msgstr "Ознакомься с нашим сервисом ближе в следущей секции"
 
-#: .\server\apps\company\templates\company\home.django-html:264
+#: .\apps\company\templates\company\home.django-html:264
 msgid "Frequently asked"
 msgstr "Часто задаваемые"
 
-#: .\server\apps\company\templates\company\home.django-html:264
+#: .\apps\company\templates\company\home.django-html:264
 msgid "questions"
 msgstr "вопросы"
 
-#: .\server\apps\company\templates\company\home.django-html:298
+#: .\apps\company\templates\company\home.django-html:298
 msgid "Catalog"
 msgstr "Каталог"
 
-#: .\server\apps\company\templates\company\home.django-html:300
+#: .\apps\company\templates\company\home.django-html:300
 msgid "Actual list of Hooli Software services for 2023"
 msgstr "Актуальный список услуг Hooli Software на 2023 год"
 
-#: .\server\apps\company\templates\company\home.django-html:302
+#: .\apps\company\templates\company\home.django-html:302
 msgid "Download"
 msgstr "Скачать"
 
-#: .\server\apps\company\templates\company\home.django-html:318
+#: .\apps\company\templates\company\home.django-html:318
 msgid "Have questions? Our team will be happy to answer."
 msgstr "Есть вопросы? Мы будем рады ответить на них."
 
-#: .\server\apps\company\templates\company\home.django-html:322
+#: .\apps\company\templates\company\home.django-html:322
 msgid "Maximum delay"
 msgstr "Макс. время ожидания"
 
-#: .\server\apps\company\templates\company\home.django-html:322
+#: .\apps\company\templates\company\home.django-html:322
 msgid "hours"
 msgstr "часа"
 
-#: .\server\apps\company\templates\company\home.django-html:340
+#: .\apps\company\templates\company\home.django-html:340
 msgid "To maintainable SOFTWARE - to bright FUTURE"
 msgstr ""
 
-#: .\server\apps\company\templates\company\home.django-html:343
+#: .\apps\company\templates\company\home.django-html:343
 msgid "Start work with us!"
 msgstr "Начни работать с нами!"
 
-#: .\server\apps\company\templates\company\home.django-html:347
-#: .\server\templates\header.django-html:80
+#: .\apps\company\templates\company\home.django-html:347
+#: .\templates\header.django-html:80
 msgid "Create order"
 msgstr "Создать заказ"
 
-#: .\server\apps\posts\admin.py:15
+#: .\apps\posts\admin.py:15
 msgid "Content information"
 msgstr "Информация о контенте"
 
-#: .\server\apps\posts\admin.py:24
+#: .\apps\posts\admin.py:24
 msgid "Post information"
 msgstr "Информация о публикации"
 
-#: .\server\apps\posts\apps.py:7 .\server\apps\posts\models.py:54
+#: .\apps\posts\apps.py:7 .\apps\posts\models.py:54
 msgid "posts"
 msgstr "публикации"
 
-#: .\server\apps\posts\models.py:9
+#: .\apps\posts\models.py:9
 msgid "category name"
 msgstr "название категории"
 
-#: .\server\apps\posts\models.py:10
+#: .\apps\posts\models.py:10
 msgid "parent category"
 msgstr "род. категория"
 
-#: .\server\apps\posts\models.py:14
+#: .\apps\posts\models.py:14
 msgid "category"
 msgstr "категория"
 
-#: .\server\apps\posts\models.py:15
+#: .\apps\posts\models.py:15
 msgid "categories"
 msgstr "категории"
 
-#: .\server\apps\posts\models.py:25
+#: .\apps\posts\models.py:25
 msgid "tag name"
 msgstr "название тега"
 
-#: .\server\apps\posts\models.py:29
+#: .\apps\posts\models.py:29
 msgid "tag"
 msgstr "тег"
 
-#: .\server\apps\posts\models.py:30
+#: .\apps\posts\models.py:30
 msgid "tags"
 msgstr "теги"
 
-#: .\server\apps\posts\models.py:40
+#: .\apps\posts\models.py:40
 msgid "content"
 msgstr "контент"
 
-#: .\server\apps\posts\models.py:41
+#: .\apps\posts\models.py:41
 msgid "creation date"
 msgstr "дата создания"
 
-#: .\server\apps\posts\models.py:42
+#: .\apps\posts\models.py:42
 msgid "is post published?"
 msgstr "пост опубликован?"
 
-#: .\server\apps\posts\models.py:43
+#: .\apps\posts\models.py:43
 #, fuzzy
 #| msgid "creation date"
 msgid "reading duration"
 msgstr "дата создания"
 
-#: .\server\apps\posts\models.py:45
+#: .\apps\posts\models.py:45
 msgid "thumbnail"
 msgstr "миниатюра"
 
-#: .\server\apps\posts\models.py:46
+#: .\apps\posts\models.py:46
 msgid "title"
 msgstr "заголовок"
 
-#: .\server\apps\posts\models.py:53
+#: .\apps\posts\models.py:53
 msgid "post"
 msgstr "публикация"
 
-#: .\server\apps\posts\templates\posts\detail.django-html:52
+#: .\apps\posts\templates\posts\detail.django-html:52
 msgid "comments"
 msgstr "комментариев"
 
-#: .\server\apps\posts\templates\posts\detail.django-html:53
-#: .\server\apps\posts\templates\posts\detail.django-html:90
+#: .\apps\posts\templates\posts\detail.django-html:53
+#: .\apps\posts\templates\posts\detail.django-html:90
 msgid "Leave comment"
 msgstr "Оставить комментарий"
 
-#: .\server\apps\posts\templates\posts\detail.django-html:130
+#: .\apps\posts\templates\posts\detail.django-html:130
 msgid "Related articles"
 msgstr "Рекомендуем прочитать"
 
-#: .\server\apps\posts\templates\posts\detail.django-html:174
+#: .\apps\posts\templates\posts\detail.django-html:174
 msgid "Popular categories"
 msgstr "Популярные категории"
 
-#: .\server\apps\posts\templates\posts\detail.django-html:188
+#: .\apps\posts\templates\posts\detail.django-html:188
 msgid "Popular tags"
 msgstr "Популярные метки"
 
-#: .\server\apps\posts\templates\posts\detail.django-html:200
+#: .\apps\posts\templates\posts\detail.django-html:200
 msgid "Recent posts"
 msgstr "Последние публикации"
 
-#: .\server\apps\posts\templates\posts\list.django-html:16
+#: .\apps\posts\templates\posts\list.django-html:16
 msgid "Our blog"
 msgstr "Наш блог"
 
-#: .\server\apps\posts\templates\posts\list.django-html:22
-#: .\server\templates\footer.django-html:44
-#: .\server\templates\header.django-html:23
-#: .\server\templates\header.django-html:134
+#: .\apps\posts\templates\posts\list.django-html:22
+#: .\templates\footer.django-html:44 .\templates\header.django-html:23
+#: .\templates\header.django-html:134
 msgid "Blog"
 msgstr "Блог"
 
-#: .\server\apps\posts\templates\posts\list.django-html:67
+#: .\apps\posts\templates\posts\list.django-html:67
 msgid "Previous"
 msgstr "Прошлая"
 
-#: .\server\apps\posts\templates\posts\list.django-html:71
+#: .\apps\posts\templates\posts\list.django-html:71
 msgid "Next"
 msgstr "Следующая"
 
-#: .\server\apps\users\templates\users\login.django-html:7
-#: .\server\apps\users\templates\users\login.django-html:21
-#: .\server\apps\users\templates\users\login.django-html:32
-#: .\server\apps\users\templates\users\register.django-html:48
+#: .\apps\users\forms.py:17 .\apps\users\forms.py:33
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: .\apps\users\forms.py:18 .\apps\users\forms.py:34
+msgid "Password"
+msgstr "Пароль"
+
+#: .\apps\users\forms.py:20 .\apps\users\forms.py:37
+msgid "Aren't you robot?"
+msgstr "Вы точно не робот?"
+
+#: .\apps\users\forms.py:27
+msgid "Remember me"
+msgstr "Запомнить меня"
+
+#: .\apps\users\forms.py:30
+#, fuzzy
+#| msgid "tag name"
+msgid "First name"
+msgstr "название тега"
+
+#: .\apps\users\forms.py:31
+#, fuzzy
+#| msgid "tag name"
+msgid "Last name"
+msgstr "название тега"
+
+#: .\apps\users\forms.py:35
+msgid "Passowrd confirm"
+msgstr "Подтвердить пароль"
+
+#: .\apps\users\templates\users\login.django-html:7
+#: .\apps\users\templates\users\login.django-html:21
+#: .\apps\users\templates\users\login.django-html:32
+#: .\apps\users\templates\users\login.django-html:51
+#: .\apps\users\templates\users\register.django-html:54
 msgid "Sign-in"
 msgstr "Вход"
 
-#: .\server\apps\users\templates\users\login.django-html:15
+#: .\apps\users\templates\users\login.django-html:15
 msgid "Hooli Software sign-in"
 msgstr "Вход в Hooli Software"
 
-#: .\server\apps\users\templates\users\oauth-card.django-html:7
-msgid "Another way to log in"
-msgstr "Альтернативные способы"
-
-#: .\server\apps\users\templates\users\oauth-card.django-html:8
-msgid "- There is always a better way"
-msgstr "- Всегда есть способ лучше"
-
-#: .\server\apps\users\templates\users\oauth-card.django-html:13
-msgid "Sign-up with Google"
-msgstr "Войти с помощью Google"
-
-#: .\server\apps\users\templates\users\oauth-card.django-html:19
-msgid "Sign-up with Vkontakte"
-msgstr "Войти с помощью Вконтакте"
-
-#: .\server\apps\users\templates\users\register.django-html:7
-#: .\server\apps\users\templates\users\register.django-html:22
-#: .\server\apps\users\templates\users\register.django-html:33
-#: .\server\apps\users\templates\users\register.django-html:47
+#: .\apps\users\templates\users\login.django-html:52
+#: .\apps\users\templates\users\register.django-html:7
+#: .\apps\users\templates\users\register.django-html:22
+#: .\apps\users\templates\users\register.django-html:33
+#: .\apps\users\templates\users\register.django-html:53
 msgid "Sign-up"
 msgstr "Регистрация"
 
-#: .\server\apps\users\templates\users\register.django-html:16
+#: .\apps\users\templates\users\oauth-card.django-html:7
+msgid "Another way to log in"
+msgstr "Альтернативные способы"
+
+#: .\apps\users\templates\users\oauth-card.django-html:8
+msgid "- There is always a better way"
+msgstr "- Всегда есть способ лучше"
+
+#: .\apps\users\templates\users\oauth-card.django-html:13
+msgid "Sign-up with Google"
+msgstr "Войти с помощью Google"
+
+#: .\apps\users\templates\users\oauth-card.django-html:19
+msgid "Sign-up with Vkontakte"
+msgstr "Войти с помощью Вконтакте"
+
+#: .\apps\users\templates\users\password-reset-complete.django-html:6
+#: .\apps\users\templates\users\password-reset-complete.django-html:17
+msgid "Password changed"
+msgstr "Пароль изменён"
+
+#: .\apps\users\templates\users\password-reset-complete.django-html:19
+msgid "Your password has been set. You can"
+msgstr "Операция завершена. Можете"
+
+#: .\apps\users\templates\users\password-reset-complete.django-html:20
+msgid "log in now"
+msgstr "войти в аккаунт"
+
+#: .\apps\users\templates\users\password-reset-complete.django-html:22
+msgid "Go home"
+msgstr "Назад на главную"
+
+#: .\apps\users\templates\users\password-reset-confirm.django-html:15
+msgid "Please enter your new password twice :"
+msgstr "Пожалуйста введите новый пароль дважды :"
+
+#: .\apps\users\templates\users\password-reset-confirm.django-html:28
+msgid "Reset password"
+msgstr "Сбросить пароль"
+
+#: .\apps\users\templates\users\password-reset-confirm.django-html:32
+msgid "This link expired"
+msgstr "Данная ссылка не действительна"
+
+#: .\apps\users\templates\users\password-reset-confirm.django-html:34
+msgid "< Go home"
+msgstr "< Назад домой"
+
+#: .\apps\users\templates\users\password-reset-done.django-html:5
+msgid "Password reset-mail sent"
+msgstr "Ссылка для сброса пароля отправлена на указанную почту"
+
+#: .\apps\users\templates\users\password-reset-done.django-html:14
+msgid "Reset-mail sent"
+msgstr "Письмо отправлено"
+
+#: .\apps\users\templates\users\password-reset-done.django-html:16
+msgid "We'd emailed you instructions for setting your password."
+msgstr "Мы отправили вам ссылку для сброса пароля."
+
+#: .\apps\users\templates\users\password-reset-done.django-html:19
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with."
+msgstr "Если вы не получили письмо, убедитесь что ввели правильную почту."
+
+#: .\apps\users\templates\users\password-reset.django-html:6
+msgid "Forgot your password?"
+msgstr "Забыли пароль?"
+
+#: .\apps\users\templates\users\password-reset.django-html:28
+msgid "Note: We will send a reset-mail to your email"
+msgstr "Важно: Мы отправим вам письмо на почту"
+
+#: .\apps\users\templates\users\register.django-html:16
 msgid "Hooli Software sign-up"
 msgstr "Регистрация в Hooli Software"
 
-#: .\server\core\settings.py:133
+#: .\core\settings.py:133
 msgid "Russian"
 msgstr "Русский"
 
-#: .\server\core\settings.py:134
+#: .\core\settings.py:134
 msgid "English"
 msgstr "Английский"
 
-#: .\server\core\settings.py:135
+#: .\core\settings.py:135
 msgid "Turkish"
 msgstr "Турецкий"
 
-#: .\server\templates\footer.django-html:22
+#: .\templates\footer.django-html:22
 msgid "To get latest news"
 msgstr "Что бы получать новости первым"
 
-#: .\server\templates\footer.django-html:28
+#: .\templates\footer.django-html:28
 msgid "Subscribe"
 msgstr "Подписаться"
 
-#: .\server\templates\footer.django-html:32
+#: .\templates\footer.django-html:32
 msgid "Not spam :)"
 msgstr "Мы не спамим"
 
-#: .\server\templates\footer.django-html:40
+#: .\templates\footer.django-html:40
 msgid "Important links"
 msgstr "Важные ссылки"
 
-#: .\server\templates\footer.django-html:43
-#: .\server\templates\header.django-html:20
-#: .\server\templates\header.django-html:131
+#: .\templates\footer.django-html:43 .\templates\header.django-html:20
+#: .\templates\header.django-html:131
 msgid "Services"
 msgstr "Услуги"
 
-#: .\server\templates\footer.django-html:45
-#: .\server\templates\header.django-html:29
-#: .\server\templates\header.django-html:143
+#: .\templates\footer.django-html:45 .\templates\header.django-html:29
+#: .\templates\header.django-html:143
 msgid "Forum"
 msgstr "Форум"
 
-#: .\server\templates\footer.django-html:48
-#: .\server\templates\header.django-html:32
-#: .\server\templates\header.django-html:146
+#: .\templates\footer.django-html:48 .\templates\header.django-html:32
+#: .\templates\header.django-html:146
 msgid "Distribute"
 msgstr "Реферальная система"
 
-#: .\server\templates\footer.django-html:55
+#: .\templates\footer.django-html:55
 msgid "Ecosystem"
 msgstr "Экосистема"
 
-#: .\server\templates\footer.django-html:64
+#: .\templates\footer.django-html:64
 msgid "Top-customers"
 msgstr "Топ-заказчики"
 
-#: .\server\templates\footer.django-html:75
-#: .\server\templates\footer.django-html:88
-#: .\server\templates\footer.django-html:101
+#: .\templates\footer.django-html:75 .\templates\footer.django-html:88
+#: .\templates\footer.django-html:101
 msgid "orders"
 msgstr "заказов"
 
-#: .\server\templates\footer.django-html:115
+#: .\templates\footer.django-html:115
 msgid "Available languages :"
 msgstr "Доступные языки :"
 
-#: .\server\templates\footer.django-html:143
+#: .\templates\footer.django-html:143
 msgid "All rights reserved."
 msgstr "Все права защищены"
 
-#: .\server\templates\footer.django-html:145
+#: .\templates\footer.django-html:145
 msgid "Privacy Policy"
 msgstr "Условия пользования"
 
-#: .\server\templates\header.django-html:26
-#: .\server\templates\header.django-html:140
+#: .\templates\header.django-html:26 .\templates\header.django-html:140
 msgid "More"
 msgstr "Дополнительно"
 
-#: .\server\templates\header.django-html:28
+#: .\templates\header.django-html:28
 msgid "About"
 msgstr "О нас"
 
-#: .\server\templates\header.django-html:30
-#: .\server\templates\header.django-html:144
+#: .\templates\header.django-html:30 .\templates\header.django-html:144
 msgid "Vacancies"
 msgstr "Вакансия"
 
-#: .\server\templates\header.django-html:31
-#: .\server\templates\header.django-html:145
+#: .\templates\header.django-html:31 .\templates\header.django-html:145
 msgid "Donate"
 msgstr "Донат"
 
-#: .\server\templates\header.django-html:44
+#: .\templates\header.django-html:44
 msgid "Search"
 msgstr "Поиск по сайту"
 
-#: .\server\templates\header.django-html:76
+#: .\templates\header.django-html:76
 msgid "Balance"
 msgstr "Баланс"
 
-#: .\server\templates\header.django-html:77
+#: .\templates\header.django-html:77
 msgid "Points"
 msgstr "Баллы"
 
-#: .\server\templates\header.django-html:83
+#: .\templates\header.django-html:83
 msgid "Profile settings"
 msgstr "Настройки профиля"
 
-#: .\server\templates\header.django-html:84
+#: .\templates\header.django-html:84
 msgid "My bussiness"
 msgstr "Мои заказы"
 
-#: .\server\templates\header.django-html:85
+#: .\templates\header.django-html:85
 msgid "Logout"
 msgstr "Выйти"
 
-#: .\server\templates\header.django-html:92
+#: .\templates\header.django-html:92
 msgid "Login"
 msgstr "Войти"
 

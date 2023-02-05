@@ -25,7 +25,7 @@
                             <li class="has-droupdown has-menu-child-item">
                                 <a href="#">{% translate 'More' %}</a>
                                 <ul class="submenu">
-                                    <li><a href="#">{% translate 'About' %}<i class="feather-fast-forward"></i></a></li>
+                                    <li><a href="{% url 'company:about' %}">{% translate 'About' %}<i class="feather-fast-forward"></i></a></li>
                                     <li><a href="#">{% translate 'Forum' %}<i class="feather-fast-forward"></i></a></li>
                                     <li><a href="{% url 'company:vacancy-list' %}">{% translate 'Vacancies' %}<i class="feather-fast-forward"></i></a></li>
                                     <li><a href="#">{% translate 'Donate' %}<i class="feather-fast-forward"></i></a></li>
@@ -136,15 +136,25 @@
                 <li>
                     <a href="{% url 'company:contact' %}">{% translate 'Contact us' %}</a>
                 </li>
-                <li class="has-droupdown">
-                    <a class="nav-link its_new" href="#">{% translate 'More' %}</a>
-                    <ul class="submenu">
-                        <li><a href="#">{% translate 'About us' %}<i class="feather-fast-forward"></i></a></li>
-                        <li><a href="#">{% translate 'Forum' %}<i class="feather-fast-forward"></i></a></li>
-                        <li><a href="{% url 'company:vacancy-list' %}">{% translate 'Vacancies' %}<i class="feather-fast-forward"></i></a></li>
-                        <li><a href="#">{% translate 'Donate' %}<i class="feather-fast-forward"></i></a></li>
-                        <li><a href="#">{% translate 'Distribute' %}<i class="feather-fast-forward"></i></a></li>
-                    </ul>
+                <li>
+                    <a href="{% url 'company:about' %}">{% translate 'About us' %}
+                    </a>
+                </li>
+                <li>
+                    <a href="#">{% translate 'Forum' %}
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'company:vacancy-list' %}">{% translate 'Vacancies' %}
+                    </a>
+                </li>
+                <li>
+                    <a href="#">{% translate 'Donate' %}
+                    </a>
+                </li>
+                <li>
+                    <a href="#">{% translate 'Distribute' %}
+                    </a>
                 </li>
             </ul>
             <!-- End Mainmanu Nav -->

@@ -43,7 +43,7 @@
                         <li class="single-list"><a href="#">{% translate 'Services' %}</a></li>
                         <li class="single-list"><a href="{% url 'posts:list' %}">{% translate 'Blog' %}</a></li>
                         <li class="single-list"><a href="#">{% translate 'Forum' %}</a></li>
-                        <li class="single-list"><a href="#">{% translate 'About us' %}</a></li>
+                        <li class="single-list"><a href="{% url 'company:about' %}">{% translate 'About us' %}</a></li>
                         <li class="single-list"><a href="#">{% translate 'Contact us' %}</a></li>
                         <li class="single-list"><a href="#">{% translate 'Distribute' %}</a></li>
                     </ul>

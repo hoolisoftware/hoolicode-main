@@ -119,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'ru-RU'
 LOCALE_PATHS = [BASE_DIR / 'locale']
 
 TIME_ZONE = 'UTC'
@@ -134,6 +134,7 @@ LANGUAGES = (
     ('en', gettext('English')),
     ('tr', gettext('Turkish')),
 )
+DEFAULT_LANGUAGE = LANGUAGES[1]
 
 
 STATIC_URL = 'static/'

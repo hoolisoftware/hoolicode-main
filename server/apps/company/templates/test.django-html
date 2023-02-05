@@ -1,0 +1,12 @@
+{% extends 'base.django-html' %}
+
+{% block title %}
+Test
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="rn-about-card">Hello</div>
+    <div class="rn-about-card transparent-bg mt-0">l</div>
+</div>
+{% endblock %}

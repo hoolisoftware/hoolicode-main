@@ -19,8 +19,7 @@
     <div class="container-fluid about-fluidimg ">
         <div class="row">
             <div class="img-wrapper">
-                <div class="bg_image--22 bg_image">
-
+                <div class="bg_image--22 bg_image" style="height: 200px">
                 </div>
             </div>
         </div>

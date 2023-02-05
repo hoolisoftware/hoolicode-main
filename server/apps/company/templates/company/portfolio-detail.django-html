@@ -1,0 +1,239 @@
+{% extends 'base.django-html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+    Portfolio details
+{% endblock title %}
+
+{% block content %}
+<div class="rn-breadcrumb-inner ptb--30">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <h5 class="title text-center text-md-start">{{ object.title }}</h5>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <ul class="breadcrumb-list">
+                    <li class="item"><a href="{% url 'company:home' %}">{% translate 'Home page' %}</a></li>
+                    <li class="separator"><i class="feather-chevron-right"></i></li>
+                    <li class="item"><a href="{% url 'company:portfolio-list' %}">{% translate 'Portfolio' %}</a></li>
+                    <li class="separator"><i class="feather-chevron-right"></i></li>
+                    <li class="item current">{{ object.title }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="product-details-area rn-section-gapTop">
+    <div class="container">
+        <div class="row g-5">
+            <!-- product image area -->
+
+            <div class="col-lg-7 col-md-12 col-sm-12">
+                <div class="product-tab-wrapper rbt-sticky-top-adjust" style="top: 100px;">
+                    <div class="pd-tab-inner">
+                        <div class="nav rn-pd-nav rn-pd-rt-content nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            {% for thumbnail in object.thumbnails.all %}
+                                <button class="nav-link {% if forloop.counter == 2 %}active{% endif %}" id="v-pills-{{ thumbnail.id }}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{ thumbnail.id }}" type="button" role="tab" aria-controls="v-pills-{{ thumbnail.id }}" aria-selected="false">
+                                    <span class="rn-pd-sm-thumbnail">
+                                        <img src="{{ thumbnail }}" alt="Nft_Profile">
+                                    </span>
+                                </button>
+                            {% endfor %}
+                        </div>
+
+                        <div class="tab-content rn-pd-content" id="v-pills-tabContent">
+                            {% for thumbnail in object.thumbnails.all %}
+                                <div class="tab-pane fade {% if forloop.counter == 2 %}active show{% endif %}" id="v-pills-{{ thumbnail.id }}" role="tabpanel" aria-labelledby="v-pills-{{ thumbnail.id }}-tab">
+                                    <div class="rn-pd-thumbnail">
+                                        <img src="{{ thumbnail }}" alt="Nft_Profile">
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- product image area end -->
+
+            <div class="col-lg-5 col-md-12 col-sm-12 mt_md--50 mt_sm--60">
+                <div class="rn-pd-content-area">
+                    <div class="pd-title-area">
+                        <h4 class="title">{{ object.title }}</h4>
+                        <div class="pd-react-area">
+                            <div class="heart-count">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                <span>0</span>
+                            </div>
+                            <div class="count">
+                                <div class="share-btn share-btn-activation dropdown">
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#shareModal">
+                                        <i class="fa-solid fa-share"></i>&nbsp;&nbsp;{% translate 'Share' %}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        {% translate 'Category' %}: 
+                        <a href="#">{{ object.category }}</a>
+                    </div>
+                    <span class="bid"><i class="fa-solid fa-calendar-days"></i> &nbsp; {% translate 'Published' %} <span class="price">{{ object.published }}</span></span>
+                    <br><br>
+                    <a class="btn btn-primary-alta" href="{{ object.link }}">{{ object.link }}</a>
+                    <div class="rn-bid-details">
+                        <div class="tab-wrapper-one">
+                            <nav class="tab-button-one">
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="false">
+                                        {% translate 'Description' %}
+                                    </button>
+                                    <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true">
+                                        {% translate 'Details' %}
+                                    </button>
+                                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
+                                        {% translate 'Review' %}
+                                    </button>
+                                </div>
+                            </nav>
+                            <div class="tab-content rn-bid-content" id="nav-tabContent">
+                                <div class="tab-pane fade py-5" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                    <p>
+                                        {{ object.description }}
+                                    </p>
+                                </div>
+                                <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    <!-- single -->
+                                    <div class="rn-pd-bd-wrapper">
+                                        <div class="top-seller-inner-one">
+                                            <!-- <p class="disc">Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                elit. Doloribus debitis nemo deserunt.</p> -->
+                                            <h6 class="name-title">
+                                                {% translate 'Customer' %}
+                                            </h6>
+                                            <div class="top-seller-wrapper">
+                                                {% if object.customer_anonym %}
+                                                    <div class="thumbnail">
+                                                        <a href="#"><img src="{% static '' %}images/client/client-1.png" alt="Nft_Profile"></a>
+                                                    </div>
+                                                    <div class="top-seller-content">
+                                                        <a href="#">
+                                                            <h6 class="name">Customer choosed to stay anonymous</h6>
+                                                        </a>
+                                                    </div>
+                                                {% else %}
+                                                    <div class="thumbnail">
+                                                        <a href="#"><img src="{{ object.customer.avatar.url }}" alt="Nft_Profile"></a>
+                                                    </div>
+                                                    <div class="top-seller-content">
+                                                        <a href="#">
+                                                            <h6 class="name">{{ object.customer.get_full_name }}</h6>
+                                                        </a>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <!-- single -->
+                                        <div class="tagcloud py-5">
+                                            {% for tag in object.tags.all %}
+                                                <a href="#">{{ tag }}</a>
+                                            {% endfor %}
+                                        </div>
+                                        <!-- single -->
+                                    </div>
+                                    <!-- single -->
+                                </div>
+                                <div class="tab-pane fade py-5" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                    <p>{{ object.review }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="rn-collection-area rn-section-gapTop">
+        <div class="container">
+            <div class="row mb--50 align-items-center">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <h3 class="title mb--0 sal-animate" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">{% translate 'Similar projects :' %}</h3>
+                </div>
+            </div>
+
+            <div class="row g-5">
+                <!-- start single collention -->
+                <div data-sal="slide-up" data-sal-delay="350" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12 sal-animate">
+                    <a href="product-details.html" class="rn-collection-inner-one">
+                        <div class="collection-wrapper">
+                            <div class="collection-big-thumbnail">
+                                <img src="{% static '' %}images/collection/collection-lg-04.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collenction-small-thumbnail">
+                                <img src="{% static '' %}images/blog/blog-02.jpg" alt="Nft_Profile">
+                                <img src="{% static '' %}images/blog/blog-02.jpg" alt="Nft_Profile">
+                                <img src="{% static '' %}images/blog/blog-02.jpg" alt="Nft_Profile">
+                            </div>
+                            <div class="collection-deg">
+                                <h6 class="title">#720</h6>
+                                <span class="items">#120</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End single collention -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="rn-popup-modal share-modal-wrapper modal fade" id="shareModal" tabindex="-1" aria-modal="true" role="dialog">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content share-wrapper">
+            <div class="modal-header share-area">
+                <h5 class="modal-title">{% translate 'Share this project on :' %}</h5>
+            </div>
+            <div class="modal-body">
+                <ul class="social-share-default">
+                    <li>
+                        <a href="https://facebook.com/share.php?u={{ request.build_absolute_uri }}" rel="nofollow noopener" target="_blank">
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </span>
+                            <span class="text">
+                                facebook
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/share?url={{ request.build_absolute_uri }}" rel="nofollow noopener" target="_blank">
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </span>
+                            <span class="text">
+                                twitter
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://vk.com/share.php?url={{ request.build_absolute_uri }}" rel="nofollow noopener" target="_blank">
+                            <span class="icon">
+                                <i style="font-size: 1.5em; color: #fff !important" class="fa-brands fa-vk"></i>
+                            </span>
+                            <span class="text">
+                                VKontakte
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
