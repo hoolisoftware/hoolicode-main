@@ -11,7 +11,7 @@ env = environ.Env(
     RECAPTCHA_PRIVATE_KEY=(str, ''),
 )
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
@@ -93,11 +93,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('POSTGRE_NAME'),
-        'USER': env('POSTGRE_USER'),
-        'PASSWORD': env('POSTGRE_PASSWORD'),
-        'HOST': env('POSTGRE_HOST'),
-        'PORT': env('POSTGRE_PORT'),
+        'NAME': env('POSTGRES_NAME'),
+        'USER': env('POSTGRES_USER'),
+        'PASSWORD': env('POSTGRES_PASSWORD'),
+        'HOST': env('POSTGRES_HOST'),
+        'PORT': env('POSTGRES_PORT'),
     }
 }
 
