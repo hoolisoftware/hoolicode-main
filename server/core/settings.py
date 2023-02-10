@@ -92,8 +92,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('POSTGRE_NAME'),
+        'USER': env('POSTGRE_USER'),
+        'PASSWORD': env('POSTGRE_PASSWORD'),
+        'HOST': env('POSTGRE_HOST'),
+        'PORT': env('POSTGRE_PORT'),
     }
 }
 
@@ -159,18 +163,7 @@ LOGOUT_URL = 'users:logout'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-SOCIALACCOUNT_PROVIDERS = {
-    # 'google': {
-    #     # For each OAuth based provider, either add a ``SocialApp``
-    #     # (``socialaccount`` app) containing the required client
-    #     # credentials, or list them here:
-    #     'APP': {
-    #         'client_id': '84964811581-oq9nnakcs9p7a7hfaipl82h9sv0vgfpq.apps.googleusercontent.com',
-    #         'secret': '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',
-    #         'key': ''
-    #     }
-    # }
-}
+SOCIALACCOUNT_PROVIDERS = {}
 
 RECAPTCHA_PUBLIC_KEY = env('RECAPTCHA_PUBLIC_KEY')
 RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY')
