@@ -12,8 +12,8 @@ RUN apt-get update \
 RUN curl https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh -o /wait-for-it.sh
 RUN chmod +x /wait-for-it.sh
 
-COPY ./entrypoint.sh /
-COPY ./start.sh /
+COPY ./docker/development/server/entrypoint.sh /
+COPY ./docker/development/server/start.sh /
 RUN chmod +x /entrypoint.sh
 RUN chmod +x /start.sh
 
