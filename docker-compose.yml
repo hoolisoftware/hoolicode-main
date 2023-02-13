@@ -1,8 +1,31 @@
 services:
 
+  server:
+    container_name: Server
+
+    build:
+      context: .
+      dockerfile: ./docker/development/server/Dockerfile
+
+    environment:
+      - DJANGO_SETTINGS_MODULE=core.settings.development
+
+    env_file:
+      - ./env/env.dev.sh
+
+    ports:
+      - 8000:8000
+    command: bash /start.sh
+
+    volumes:
+      - ./server/:/home/app/webapp/
+
+    depends_on:
+      - database
+
   database:
-    image: postgres:15.1-alpine
     container_name: Database
+    image: postgres:15.1-alpine
 
     volumes:
       - dev_db_data:/var/lib/postgresql/data/
@@ -14,24 +37,6 @@ services:
 
     ports:
       - 5432:5432
-
-  server:
-    container_name: Server
-    build:
-      context: .
-      dockerfile: ./docker/development/server/Dockerfile
-    environment:
-      - DJANGO_SETTINGS_MODULE=core.settings.development
-    env_file:
-      - ./env/env.dev.sh
-    ports:
-      - 8000:8000
-    depends_on:
-      - "database"
-    restart: always
-    command: bash /start.sh
-    volumes:
-      - ./server/:/home/app/webapp/
 
 volumes:
   dev_db_data:

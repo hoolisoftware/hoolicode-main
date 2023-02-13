@@ -1,16 +1,20 @@
 from os import environ
 from pathlib import Path
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', '*']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0']
 CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0', 'http://127.0.0.1']
 
+if (HOST := environ.get('HOST')):
+    ALLOWED_HOSTS.append(HOST)
+    CSRF_TRUSTED_ORIGINS.append(f'https://{HOST}')
+
 INSTALLED_APPS = [
+    'corsheaders',
     'modeltranslation',
     'rest_framework',
-    
+
     'apps.users',
     'apps.posts',
     'apps.company',
@@ -39,6 +43,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
