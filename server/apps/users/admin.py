@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from . import models
 
+
 @admin.register(models.User)
 class UserAdmin(admin.ModelAdmin):
     list_display = (
@@ -13,12 +14,12 @@ class UserAdmin(admin.ModelAdmin):
     )
     fieldsets = (
         (
-            'Personal Info', 
+            'Personal Info',
             {
                 'fields': (
                     'username',
-                    'email', 
-                    'first_name', 
+                    'email',
+                    'first_name',
                     'last_name',
                     'avatar',
                 )
@@ -33,27 +34,26 @@ class UserAdmin(admin.ModelAdmin):
                     'account_type'
                 )
             }
-        )
-        ,
+        ),
         (
-            'Additional Info', 
+            'Additional Info',
             {
                 'fields': (
-                    'last_login', 
-                    'date_joined', 
+                    'last_login',
+                    'date_joined',
                 )
             }
         ),
         (
-            'Staff Info', 
+            'Staff Info',
             {
                 'fields': (
-                    'is_active', 
-                    'is_staff', 
-                    'is_superuser', 
-                    'user_permissions', 
+                    'is_active',
+                    'is_staff',
+                    'is_superuser',
+                    'user_permissions',
                     'groups'
-                ), 
+                ),
                 'classes': ('collapse',)
             }
         ),

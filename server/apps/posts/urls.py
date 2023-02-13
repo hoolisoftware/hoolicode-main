@@ -7,7 +7,9 @@ from . import sitemaps
 app_name = 'posts'
 
 urlpatterns = [
-    path('sitemap.xml', sitemap, {'sitemaps': {'post': sitemaps.PostSitemap}}, name='django.contrib.sitemaps.views.sitemap'),
+    path('sitemap.xml', sitemap, {'sitemaps': {
+         'post': sitemaps.PostSitemap}},
+         name='django.contrib.sitemaps.views.sitemap'),
     path('', views.PostListView.as_view(), name='list'),
     path('api/', include('apps.posts.api.urls')),
     path('<str:slug>', views.PostDetailView.as_view(), name='detail'),

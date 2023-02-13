@@ -1,13 +1,8 @@
-from django.shortcuts import render
-from django.contrib import messages
-from django.contrib.auth import get_user_model, views as auth_views
-from django.contrib.auth import get_user_model, authenticate, login, logout
-from django.contrib.auth import views as auth_views
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.hashers import make_password
-from django.contrib.auth.views import PasswordChangeView
 from django.shortcuts import render, redirect
-from django.http.response import HttpResponseRedirect, HttpResponse
+from django.contrib.auth import get_user_model, authenticate, login
+from django.contrib.auth import views as auth_views
+from django.contrib.auth.hashers import make_password
+from django.http.response import HttpResponse
 from django.http.request import HttpRequest
 from django.views import generic
 from django.urls import reverse, reverse_lazy
@@ -31,8 +26,15 @@ class LoginView(generic.View):
 
         if form.is_valid():
 
-            if not (user := authenticate(request, username=form.cleaned_data['username'], password=form.cleaned_data['password'])):
-                form.add_error(field='username', error='Incorrect Email or Password')
+            if not (
+                user := authenticate(
+                    request,
+                    username=form.cleaned_data['username'],
+                    password=form.cleaned_data['password']
+                )
+            ):
+                form.add_error(field='username',
+                               error='Incorrect Email or Password')
                 return render(request, self.template_name, {'form': form})
 
             login(request, user)
@@ -65,7 +67,11 @@ class RegisterView(generic.View):
                 email=form.cleaned_data['email'],
                 password=make_password(form.cleaned_data['password1'])
             )
-            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            login(
+                request,
+                user,
+                backend='django.contrib.auth.backends.ModelBackend'
+            )
         else:
             return render(request, self.template_name, {'form': form})
 
@@ -76,16 +82,21 @@ class PasswordResetView(auth_views.PasswordResetView):
     template_name = 'users/password-reset.django-html'
     email_template_name = 'users/password-reset-email.django-html'
     success_url = 'users:password-reset-done'
+
     def get_success_url(self):
         return reverse('users:password-reset-done')
+
 
 class PasswordResetDoneView(auth_views.PasswordResetDoneView):
     template_name = 'users/password-reset-done.django-html'
 
+
 class PasswordResetConfirmView(auth_views.PasswordResetConfirmView):
     template_name = 'users/password-reset-confirm.django-html'
+
     def get_success_url(self):
         return reverse('users:password-reset-complete')
+
 
 class PasswordResetCompleteView(auth_views.PasswordResetCompleteView):
     template_name = 'users/password-reset-complete.django-html'

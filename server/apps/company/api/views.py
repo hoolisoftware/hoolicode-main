@@ -3,6 +3,7 @@ from rest_framework import generics, permissions
 from . import serializers
 from .. import models
 
+
 class FeedbackRequestCreateAV(generics.CreateAPIView):
     queryset = models.FeedbackRequest.objects.all()
     serializer_class = serializers.FeedbackRequestSerializer

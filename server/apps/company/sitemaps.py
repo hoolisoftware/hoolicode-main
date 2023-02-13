@@ -4,16 +4,17 @@ from django.urls import reverse
 
 from . import models
 
+
 class StaticViewSitemap(sitemaps.Sitemap):
     # priority = 0.5
     # changefreq = 'daily'
 
     def items(self):
         return [
-            'company:home', 
-            'company:contact', 
+            'company:home',
+            'company:contact',
             'company:about',
-            'company:vacancy-list',            
+            'company:vacancy-list',
             'users:login',
             'users:register',
             'posts:list',

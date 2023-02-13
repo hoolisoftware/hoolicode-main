@@ -33,7 +33,7 @@ class ProjectThumbnail(models.Model):
     class Meta:
         verbose_name = _('project thumbnail')
         verbose_name_plural = _('project thumbnails')
-    
+
     def __repr__(self):
         return self.image.url
 
@@ -48,7 +48,7 @@ class ProjectTag(models.Model):
     class Meta:
         verbose_name = _('project tag')
         verbose_name_plural = _('project tags')
-    
+
     def __repr__(self):
         return self.name
 
@@ -63,7 +63,7 @@ class ProjectCategory(models.Model):
     class Meta:
         verbose_name = _('project category')
         verbose_name_plural = _('project categories')
-    
+
     def __repr__(self):
         return self.name
 
@@ -72,8 +72,11 @@ class ProjectCategory(models.Model):
 
 
 class Project(models.Model):
-    category = models.ForeignKey(verbose_name=_('categories'), to=ProjectCategory, on_delete=models.SET_NULL, blank=True, null=True)
-    customer = models.ForeignKey(verbose_name=_('customer'), to=User, on_delete=models.SET_NULL, blank=True, null=True)
+    category = models.ForeignKey(verbose_name=_(
+        'categories'), to=ProjectCategory, on_delete=models.SET_NULL,
+        blank=True, null=True)
+    customer = models.ForeignKey(verbose_name=_(
+        'customer'), to=User, on_delete=models.SET_NULL, blank=True, null=True)
     customer_anonym = models.BooleanField(_('do you want to stay anonym?'))
     description = models.TextField(_('description'))
     link = models.URLField(_('project link'))
@@ -81,13 +84,14 @@ class Project(models.Model):
     review = models.TextField(_('review'))
     slug = AutoSlugField(populate_from='title')
     tags = models.ManyToManyField(verbose_name=_('tags'), to=ProjectTag)
-    thumbnails = models.ManyToManyField(verbose_name=_('thumbnails'), to=ProjectThumbnail)
+    thumbnails = models.ManyToManyField(
+        verbose_name=_('thumbnails'), to=ProjectThumbnail)
     title = models.CharField(_('title'), max_length=55)
 
     class Meta:
         verbose_name = _('project')
         verbose_name_plural = _('projects')
-    
+
     def __repr__(self):
         return self.title
 
@@ -108,9 +112,10 @@ class Vacancy(models.Model):
     class Meta:
         verbose_name = _('vacancy')
         verbose_name_plural = _('vacancies')
-        
+
     def get_absolute_url(self):
-        return reverse_lazy("company:vacancy-detail", kwargs={"slug": self.slug})
+        return reverse_lazy("company:vacancy-detail",
+                            kwargs={"slug": self.slug})
 
 
 class VacancyRequest(models.Model):
@@ -156,10 +161,10 @@ class Feature(models.Model):
         verbose_name_plural = _('features')
 
 
-class Settings(SingletonModel): 
+class Settings(SingletonModel):
     quote = models.TextField(_('quote'))
     email_support = models.EmailField(_('support email'))
-    
+
     class Meta:
         verbose_name = _('settings')
         verbose_name_plural = _('settings')

@@ -1,6 +1,7 @@
 from django.contrib.sitemaps import Sitemap
 from . import models
 
+
 class PostSitemap(Sitemap):
     changefreq = "weekly"
     priority = 0.5

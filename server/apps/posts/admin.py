@@ -4,6 +4,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 from . import models
 
+
 @admin.register(models.Post)
 class PostAdmin(SummernoteModelAdmin):
     list_display = ('title', 'created', 'is_published')
@@ -27,10 +28,12 @@ class PostAdmin(SummernoteModelAdmin):
             )
         })
     )
-    
+
+
 @admin.register(models.PostComment)
 class PostCommentAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'email', 'post', 'created')
+
 
 admin.site.register(models.Category)
 admin.site.register(models.Tag)

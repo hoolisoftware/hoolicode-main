@@ -18,11 +18,15 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='FAQ',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('question', models.TextField(verbose_name='question')),
-                ('question_ru', models.TextField(null=True, verbose_name='question')),
-                ('question_en', models.TextField(null=True, verbose_name='question')),
-                ('question_tr', models.TextField(null=True, verbose_name='question')),
+                ('question_ru', models.TextField(
+                    null=True, verbose_name='question')),
+                ('question_en', models.TextField(
+                    null=True, verbose_name='question')),
+                ('question_tr', models.TextField(
+                    null=True, verbose_name='question')),
                 ('answer', models.TextField(verbose_name='answer')),
                 ('answer_ru', models.TextField(null=True, verbose_name='answer')),
                 ('answer_en', models.TextField(null=True, verbose_name='answer')),
@@ -36,11 +40,16 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Feature',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('placeholder', models.CharField(max_length=255, verbose_name='placeholder')),
-                ('placeholder_ru', models.CharField(max_length=255, null=True, verbose_name='placeholder')),
-                ('placeholder_en', models.CharField(max_length=255, null=True, verbose_name='placeholder')),
-                ('placeholder_tr', models.CharField(max_length=255, null=True, verbose_name='placeholder')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
+                ('placeholder', models.CharField(
+                    max_length=255, verbose_name='placeholder')),
+                ('placeholder_ru', models.CharField(
+                    max_length=255, null=True, verbose_name='placeholder')),
+                ('placeholder_en', models.CharField(
+                    max_length=255, null=True, verbose_name='placeholder')),
+                ('placeholder_tr', models.CharField(
+                    max_length=255, null=True, verbose_name='placeholder')),
             ],
             options={
                 'verbose_name': 'feature',
@@ -50,13 +59,16 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='FeedbackRequest',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('full_name', models.CharField(max_length=255, verbose_name='full name')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
+                ('full_name', models.CharField(
+                    max_length=255, verbose_name='full name')),
                 ('email', models.EmailField(max_length=254, verbose_name='e-mail')),
                 ('subject', models.CharField(max_length=255, verbose_name='subject')),
                 ('message', models.TextField(verbose_name='message')),
                 ('created', models.DateTimeField(auto_now=True)),
-                ('proceed', models.BooleanField(default=False, verbose_name='is proceed?')),
+                ('proceed', models.BooleanField(
+                    default=False, verbose_name='is proceed?')),
             ],
             options={
                 'verbose_name': 'feedback request',
@@ -66,9 +78,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ProjectCategory',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=55, verbose_name='name')),
-                ('slug', autoslug.fields.AutoSlugField(editable=False, populate_from='name')),
+                ('slug', autoslug.fields.AutoSlugField(
+                    editable=False, populate_from='name')),
             ],
             options={
                 'verbose_name': 'project category',
@@ -78,9 +92,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ProjectTag',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=55, verbose_name='name')),
-                ('slug', autoslug.fields.AutoSlugField(editable=False, populate_from='name')),
+                ('slug', autoslug.fields.AutoSlugField(
+                    editable=False, populate_from='name')),
             ],
             options={
                 'verbose_name': 'project tag',
@@ -90,7 +106,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ProjectThumbnail',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('image', models.ImageField(upload_to='company/projects/thumbnails')),
             ],
             options={
@@ -101,12 +118,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Settings',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('quote', models.TextField(verbose_name='quote')),
                 ('quote_ru', models.TextField(null=True, verbose_name='quote')),
                 ('quote_en', models.TextField(null=True, verbose_name='quote')),
                 ('quote_tr', models.TextField(null=True, verbose_name='quote')),
-                ('email_support', models.EmailField(max_length=254, verbose_name='support email')),
+                ('email_support', models.EmailField(
+                    max_length=254, verbose_name='support email')),
             ],
             options={
                 'verbose_name': 'settings',
@@ -116,20 +135,32 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Vacancy',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('position', models.CharField(max_length=255, verbose_name='position')),
-                ('position_ru', models.CharField(max_length=255, null=True, verbose_name='position')),
-                ('position_en', models.CharField(max_length=255, null=True, verbose_name='position')),
-                ('position_tr', models.CharField(max_length=255, null=True, verbose_name='position')),
-                ('slug', autoslug.fields.AutoSlugField(editable=False, populate_from='position')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
+                ('position', models.CharField(
+                    max_length=255, verbose_name='position')),
+                ('position_ru', models.CharField(
+                    max_length=255, null=True, verbose_name='position')),
+                ('position_en', models.CharField(
+                    max_length=255, null=True, verbose_name='position')),
+                ('position_tr', models.CharField(
+                    max_length=255, null=True, verbose_name='position')),
+                ('slug', autoslug.fields.AutoSlugField(
+                    editable=False, populate_from='position')),
                 ('salary', models.CharField(max_length=255, verbose_name='salary')),
-                ('salary_ru', models.CharField(max_length=255, null=True, verbose_name='salary')),
-                ('salary_en', models.CharField(max_length=255, null=True, verbose_name='salary')),
-                ('salary_tr', models.CharField(max_length=255, null=True, verbose_name='salary')),
+                ('salary_ru', models.CharField(
+                    max_length=255, null=True, verbose_name='salary')),
+                ('salary_en', models.CharField(
+                    max_length=255, null=True, verbose_name='salary')),
+                ('salary_tr', models.CharField(
+                    max_length=255, null=True, verbose_name='salary')),
                 ('description', models.TextField(verbose_name='description')),
-                ('description_ru', models.TextField(null=True, verbose_name='description')),
-                ('description_en', models.TextField(null=True, verbose_name='description')),
-                ('description_tr', models.TextField(null=True, verbose_name='description')),
+                ('description_ru', models.TextField(
+                    null=True, verbose_name='description')),
+                ('description_en', models.TextField(
+                    null=True, verbose_name='description')),
+                ('description_tr', models.TextField(
+                    null=True, verbose_name='description')),
                 ('posted', models.DateField(auto_now=True)),
             ],
             options={
@@ -140,13 +171,16 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='VacancyRequest',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('full_name', models.CharField(max_length=255, verbose_name='full name')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
+                ('full_name', models.CharField(
+                    max_length=255, verbose_name='full name')),
                 ('email', models.EmailField(max_length=254, verbose_name='e-mail')),
                 ('message', models.TextField(verbose_name='message')),
                 ('cv', models.FileField(upload_to='company/cv/', verbose_name='cv')),
                 ('created', models.DateTimeField(auto_now=True)),
-                ('proceed', models.BooleanField(default=False, verbose_name='is proceed?')),
+                ('proceed', models.BooleanField(
+                    default=False, verbose_name='is proceed?')),
             ],
             options={
                 'verbose_name': 'vacancy request',
@@ -156,18 +190,25 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Project',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('customer_anonym', models.BooleanField(verbose_name='do you want to stay anonym?')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
+                ('customer_anonym', models.BooleanField(
+                    verbose_name='do you want to stay anonym?')),
                 ('description', models.TextField(verbose_name='description')),
                 ('link', models.URLField(verbose_name='project link')),
                 ('published', models.DateField(auto_now=True)),
                 ('review', models.TextField(verbose_name='review')),
-                ('slug', autoslug.fields.AutoSlugField(editable=False, populate_from='title')),
+                ('slug', autoslug.fields.AutoSlugField(
+                    editable=False, populate_from='title')),
                 ('title', models.CharField(max_length=55, verbose_name='title')),
-                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='company.projectcategory', verbose_name='categories')),
-                ('customer', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL, verbose_name='customer')),
-                ('tags', models.ManyToManyField(to='company.projecttag', verbose_name='tags')),
-                ('thumbnails', models.ManyToManyField(to='company.projectthumbnail', verbose_name='thumbnails')),
+                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL,
+                 to='company.projectcategory', verbose_name='categories')),
+                ('customer', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL,
+                 to=settings.AUTH_USER_MODEL, verbose_name='customer')),
+                ('tags', models.ManyToManyField(
+                    to='company.projecttag', verbose_name='tags')),
+                ('thumbnails', models.ManyToManyField(
+                    to='company.projectthumbnail', verbose_name='thumbnails')),
             ],
             options={
                 'verbose_name': 'project',
