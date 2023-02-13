@@ -1,7 +1,6 @@
 from os import environ
 from pathlib import Path
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', '*']
@@ -10,7 +9,7 @@ CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0', 'http://127.0.0.1']
 INSTALLED_APPS = [
     'modeltranslation',
     'rest_framework',
-    
+
     'apps.users',
     'apps.posts',
     'apps.company',
