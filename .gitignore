@@ -163,3 +163,6 @@ run.bat
 .hoolicode/
 env.dev.sh
 env.prod.sh
+
+.vscode
+.dev_server/
