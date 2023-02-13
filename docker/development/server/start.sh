@@ -1,7 +1,11 @@
 #! /bin/bash
 
+set -o errexit
+set -o pipefail
+set -o nounset
+
 python manage.py compilemessages -v 0
-python manage.py makemigrations --no-input -v 0
 python manage.py migrate -v 0 --no-input
+python manage.py ensure_admin --username admin --password admin
 
 exec python manage.py runserver 0.0.0.0:8000
