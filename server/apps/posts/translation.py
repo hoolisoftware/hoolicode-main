@@ -1,4 +1,4 @@
-from modeltranslation.translator import  register, TranslationOptions
+from modeltranslation.translator import register, TranslationOptions
 
 from . import models
 
@@ -6,14 +6,14 @@ from . import models
 @register(models.Category)
 class CategoryTranslateOptions(TranslationOptions):
     fields = (
-        'name', 
+        'name',
     )
 
 
 @register(models.Tag)
 class TagTranslateOptions(TranslationOptions):
     fields = (
-        'name', 
+        'name',
     )
 
 
@@ -21,5 +21,5 @@ class TagTranslateOptions(TranslationOptions):
 class PostTranslateOptions(TranslationOptions):
     fields = (
         'content',
-        'title', 
+        'title',
     )

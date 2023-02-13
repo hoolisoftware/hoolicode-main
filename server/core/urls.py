@@ -8,7 +8,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api-auth/', include('rest_framework.urls',
+         namespace='rest_framework')),
     path('editor/', include('django_summernote.urls')),
 
 ]

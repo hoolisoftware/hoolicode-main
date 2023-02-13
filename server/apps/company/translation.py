@@ -1,4 +1,4 @@
-from modeltranslation.translator import  register, TranslationOptions
+from modeltranslation.translator import register, TranslationOptions
 
 from . import models
 
@@ -7,19 +7,22 @@ from . import models
 class FAQTranslateOptions(TranslationOptions):
     fields = ('question', 'answer')
 
+
 @register(models.Vacancy)
 class VacancyTranslateOptions(TranslationOptions):
     fields = (
-        'position', 
+        'position',
         'salary',
         'description'
     )
+
 
 @register(models.Feature)
 class FeatureTranslateOptions(TranslationOptions):
     fields = (
         'placeholder',
     )
+
 
 @register(models.Settings)
 class SettingsTranslateOptions(TranslationOptions):

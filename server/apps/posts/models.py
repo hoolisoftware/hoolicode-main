@@ -7,7 +7,8 @@ from django.utils.translation import gettext_lazy as _
 
 class Category(models.Model):
     name = models.CharField(_('category name'), max_length=50)
-    parent_category = models.ForeignKey('self', verbose_name=_('parent category'), blank=True, null=True, on_delete=models.CASCADE)
+    parent_category = models.ForeignKey('self', verbose_name=_(
+        'parent category'), blank=True, null=True, on_delete=models.CASCADE)
     slug = AutoSlugField(populate_from='name', unique=True)
 
     class Meta:
@@ -45,9 +46,13 @@ class Post(models.Model):
     thumbnail = models.ImageField(_('thumbnail'), upload_to='posts/thumbnail/')
     title = models.CharField(_('title'), max_length=255)
     slug = AutoSlugField(populate_from='title')
-    
-    category = models.ForeignKey(Category, verbose_name=Category._meta.verbose_name, on_delete=models.CASCADE, related_name='posts')
-    tags = models.ManyToManyField(Tag, verbose_name=Tag._meta.verbose_name_plural, blank=True, related_name='posts')
+
+    category = models.ForeignKey(
+        Category, verbose_name=Category._meta.verbose_name,
+        on_delete=models.CASCADE, related_name='posts')
+    tags = models.ManyToManyField(
+        Tag, verbose_name=Tag._meta.verbose_name_plural, blank=True,
+        related_name='posts')
 
     class Meta:
         verbose_name = _('post')
@@ -60,14 +65,17 @@ class Post(models.Model):
         return f'{self._meta.verbose_name.title()}: {self.title}>'
 
     def get_related(self):
-        return type(self).objects.exclude(id=self.id).filter(category=self.category)
+        return type(self).objects.exclude(id=self.id).filter(
+            category=self.category
+        )
 
     def get_absolute_url(self):
         return reverse_lazy("posts:detail", kwargs={"slug": self.slug})
-    
+
 
 class PostComment(models.Model):
-    post = models.ForeignKey(to=Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(
+        to=Post, on_delete=models.CASCADE, related_name='comments')
     full_name = models.CharField(_('full name'), max_length=55)
     email = models.EmailField(_('e-mail'))
     comment = models.TextField(_('comment'))

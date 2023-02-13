@@ -1,9 +1,9 @@
-from captcha import widgets as captcha_widgets 
+from captcha import widgets as captcha_widgets
 from captcha.fields import ReCaptchaField
-from core.mixins import AddClassNameMixin
 from django.forms import ModelForm
 
 from . import models
+
 
 class VacancyRequestForm(ModelForm):
     captcha = ReCaptchaField(
@@ -13,6 +13,7 @@ class VacancyRequestForm(ModelForm):
             }
         )
     )
+
     class Meta:
         model = models.VacancyRequest
         fields = (
@@ -22,6 +23,7 @@ class VacancyRequestForm(ModelForm):
             'cv',
         )
 
+
 class FeedbackRequestForm(ModelForm):
     captcha = ReCaptchaField(
         widget=captcha_widgets.ReCaptchaV2Checkbox(
@@ -30,6 +32,7 @@ class FeedbackRequestForm(ModelForm):
             }
         )
     )
+
     class Meta:
         model = models.FeedbackRequest
         fields = (
