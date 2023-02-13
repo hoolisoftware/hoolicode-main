@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'django_summernote'
 ]
 
-SITE_ID = env('SITE_ID')
+SITE_ID = int(environ.get('SITE_ID', '1'))
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -110,9 +110,9 @@ DEFAULT_LANGUAGE = LANGUAGES[1]
 
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = (
-    BASE_DIR / 'core/staticfiles',
+    BASE_DIR / 'core/static',
 )
 
 MEDIA_URL = 'media/'
@@ -133,7 +133,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SOCIALACCOUNT_PROVIDERS = {}
 
-RECAPTCHA_PUBLIC_KEY = environ('RECAPTCHA_PUBLIC_KEY')
-RECAPTCHA_PRIVATE_KEY = environ('RECAPTCHA_PRIVATE_KEY')
+RECAPTCHA_PUBLIC_KEY = environ.get('RECAPTCHA_PUBLIC_KEY', 'test')
+RECAPTCHA_PRIVATE_KEY = environ.get('RECAPTCHA_PRIVATE_KEY', 'test')
 DRF_RECAPTCHA_SECRET_KEY = RECAPTCHA_PRIVATE_KEY
 RECAPTCHA_REQUIRED_SCORE = 0.85

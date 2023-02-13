@@ -20,6 +20,10 @@ services:
     build:
       context: .
       dockerfile: ./docker/development/server/Dockerfile
+    environment:
+      - DJANGO_SETTINGS_MODULE=core.settings.development
+    env_file:
+      - ./env/env.dev.sh
     ports:
       - 8000:8000
     depends_on:

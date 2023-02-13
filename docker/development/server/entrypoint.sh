@@ -1,9 +1,5 @@
 #! /bin/bash
 
-set -o errexit
-set -o pipefail
-set -o nounset
-
 mkdir -p logs/
 mkdir -p locale/
 

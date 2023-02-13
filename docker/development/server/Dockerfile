@@ -1,4 +1,4 @@
-FROM python:3.10.8-slim-buster
+FROM python:3.10
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1  
@@ -21,14 +21,14 @@ ENV DockerHOME=/home/app/webapp
 
 RUN mkdir -p $DockerHOME  
 
-WORKDIR $DockerHOME  
+WORKDIR $DockerHOME
 
-RUN pip install --upgrade pip  
+RUN pip install --upgrade pip
 
-COPY ./requirements/requirements.dev.txt / 
+COPY ./requirements/requirements.dev.txt /requirements.txt 
 
-RUN pip install -r /requirements.txt  
+RUN pip install -r /requirements.txt
 
-COPY ./server $DockerHOME  
+COPY ./server $DockerHOME
 
 ENTRYPOINT ["/entrypoint.sh"]
