@@ -72,3 +72,7 @@ class PostComment(models.Model):
     email = models.EmailField(_('e-mail'))
     comment = models.TextField(_('comment'))
     created = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = _('post comment')
+        verbose_name_plural = _('post comments')
