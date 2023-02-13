@@ -1,27 +1,11 @@
-import os
+from os import environ
 from pathlib import Path
 
-import environ
-
-env = environ.Env(
-    DEBUG=(str, False),
-    SECRET_KEY=(str, 'secret-key'),
-    SITE_ID=(int, 1),
-    RECAPTCHA_PUBLIC_KEY=(str, ''),
-    RECAPTCHA_PRIVATE_KEY=(str, ''),
-)
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-
-SECRET_KEY = env('SECRET_KEY')
-
-DEBUG = env('DEBUG') == 'on'
-
-
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', '*']
+CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0', 'http://127.0.0.1']
 
 INSTALLED_APPS = [
     'modeltranslation',
@@ -46,7 +30,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'captcha',
     "drf_recaptcha",
-    'django_summernote',
+    'django_summernote'
 ]
 
 SITE_ID = env('SITE_ID')
@@ -59,7 +43,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware'
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -76,7 +60,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages'
             ],
             'libraries': {
                 'core': 'templatetags.core',
@@ -89,19 +73,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('POSTGRES_NAME'),
-        'USER': env('POSTGRES_USER'),
-        'PASSWORD': env('POSTGRES_PASSWORD'),
-        'HOST': env('POSTGRES_HOST'),
-        'PORT': env('POSTGRES_PORT'),
-    }
-}
-
-
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
@@ -109,16 +80,16 @@ AUTHENTICATION_BACKENDS = [
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'
     },
 ]
 
@@ -126,17 +97,14 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'ru-RU'
 LOCALE_PATHS = [BASE_DIR / 'locale']
 
+USE_TZ = True
+USE_I18N = True
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
-
-USE_TZ = True
-
-gettext = lambda s: s
 LANGUAGES = (
-    ('ru', gettext('Russian')),
-    ('en', gettext('English')),
-    ('tr', gettext('Turkish')),
+    ('ru', 'Russian'),
+    ('en', 'English'),
+    ('tr', 'Turkish'),
 )
 DEFAULT_LANGUAGE = LANGUAGES[1]
 
@@ -144,18 +112,18 @@ DEFAULT_LANGUAGE = LANGUAGES[1]
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = (
-    BASE_DIR / 'core/static',
+    BASE_DIR / 'core/staticfiles',
 )
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
 
-LOGIN_REDIRECT_URL = 'company:home'		
+LOGIN_REDIRECT_URL = 'company:home'
 LOGOUT_REDIRECT_URL = 'company:home'
 
 LOGIN_URL = 'users:login'
@@ -165,7 +133,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SOCIALACCOUNT_PROVIDERS = {}
 
-RECAPTCHA_PUBLIC_KEY = env('RECAPTCHA_PUBLIC_KEY')
-RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY')
+RECAPTCHA_PUBLIC_KEY = environ('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = environ('RECAPTCHA_PRIVATE_KEY')
 DRF_RECAPTCHA_SECRET_KEY = RECAPTCHA_PRIVATE_KEY
 RECAPTCHA_REQUIRED_SCORE = 0.85
