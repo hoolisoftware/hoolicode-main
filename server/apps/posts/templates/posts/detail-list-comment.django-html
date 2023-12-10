@@ -1,0 +1,38 @@
+{% load static %}
+{% load i18n %}
+
+<div class="comments-wrapper pt--40">
+    <div class="comments-area">
+        <div class="trydo-blog-comment">
+            <div class="mb--40">
+                <h5 class="comment-title">{{ object.comments.count }} {% translate 'comments' %}</h5>
+                <a class="btn btn-primary" href="#ajaxFormHeading">{% translate 'Leave comment' %}</a>
+            </div>
+            <!-- Start Coment List  -->
+            <ul class="comment-list">
+
+                {% for comment in object.comments.all %}
+                    <!-- Start Single Comment  -->
+                    <li class="comment parent">
+                        <div class="single-comment">
+                            <div class="comment-author comment-img">
+                                <img style="height: 50px; width: 50px; object-fit: cover;" class="comment-avatar" src="{% static 'images/anonymous_user.png' %}" alt="Comment Image">
+                                <div class="m-b-20">
+                                    <div class="commenter">{{ comment.full_name }}</div>
+                                    <div class="time-spent">{{ comment.created }}</div>
+                                </div>
+                            </div>
+                            <div class="comment-text">
+                                <p>
+                                    - {{ comment.comment }}
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- End Single Comment  -->
+                {% endfor %}
+            </ul>
+            <!-- End Coment List  -->
+        </div>
+    </div>
+</div>

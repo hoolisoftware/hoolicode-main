@@ -12,6 +12,8 @@ urlpatterns = [
          namespace='rest_framework')),
     path('editor/', include('django_summernote.urls')),
 
+    path('api/company/', include('apps.company.api.urls')),
+    path('api/posts/', include('apps.posts.api.urls')),
 ]
 
 urlpatterns += i18n_patterns(

@@ -3,8 +3,8 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0']
-CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0', 'http://127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0', 'http://127.0.0.1', 'http://localhost']
 
 if (HOST := environ.get('HOST')):
     ALLOWED_HOSTS.append(HOST)
@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'captcha',
     "drf_recaptcha",
-    'django_summernote'
+    'django_summernote',
+    'django_filters',
 ]
 
 SITE_ID = int(environ.get('SITE_ID', '1'))
@@ -138,7 +139,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SOCIALACCOUNT_PROVIDERS = {}
 
-RECAPTCHA_PUBLIC_KEY = environ.get('RECAPTCHA_PUBLIC_KEY', 'test')
-RECAPTCHA_PRIVATE_KEY = environ.get('RECAPTCHA_PRIVATE_KEY', 'test')
+RECAPTCHA_PUBLIC_KEY = "6LcarSspAAAAANslm1_QK52QOR5WOSdtvcqrUdin"
+RECAPTCHA_PRIVATE_KEY = "6LcarSspAAAAADBaf87BlmYOQL4wuzKMUicZFgIl"
 DRF_RECAPTCHA_SECRET_KEY = RECAPTCHA_PRIVATE_KEY
 RECAPTCHA_REQUIRED_SCORE = 0.85

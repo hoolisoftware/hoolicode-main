@@ -97,11 +97,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 sal-animate" data-sal="slide-up" data-sal-delay="200" data-sal-duration="800">
+            <div class="col-lg-6 sal-animate" data-sal="slide-up">
                 <div class="form-wrapper-one registration-area">
                     <h3 class="mb--30">{% translate 'Feedback form' %}</h3>
                     <form class="row" id="ajaxForm">
-                        {% include 'ajax_form.django-html' with form=form form_action='/api/feedback-request-create/' %}
+                        {% include 'ajax_form.django-html' with form=form form_action='/api/company/feedback-request-create/' %}
                         <button type="submit" class="btn btn-primary">{% translate 'Submit' %}</button>
                     </form>
                 </div>

@@ -8,15 +8,6 @@ class FAQTranslateOptions(TranslationOptions):
     fields = ('question', 'answer')
 
 
-@register(models.Vacancy)
-class VacancyTranslateOptions(TranslationOptions):
-    fields = (
-        'position',
-        'salary',
-        'description'
-    )
-
-
 @register(models.Feature)
 class FeatureTranslateOptions(TranslationOptions):
     fields = (

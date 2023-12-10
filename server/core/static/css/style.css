@@ -18282,9 +18282,6 @@ button .small-image {
 /*---------------------------
     Filter Exanded  
 -----------------------------*/
-.default-exp-wrapper {
-  border-top: 1px solid var(--color-border);
-}
 .default-exp-wrapper .inner {
   display: flex;
   padding: 40px 0;
@@ -24164,3 +24161,10 @@ body.active-light-mode {
   background-image: linear-gradient(to top, #0c0c2100 0%, #edf0f2ab 87%);
 }
 /*# sourceMappingURL=../maps/style.css.map */
+
+/* custom css */
+
+.wysiwyg-content p
+{
+  margin-bottom: 0;
+}

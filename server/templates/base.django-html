@@ -30,7 +30,9 @@
 
     <!-- Style css -->
     <link rel="stylesheet" href="{% static '' %}css/style.css">
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     {% block custom_styles %}
     {% endblock %}
 </head>
@@ -73,6 +75,7 @@
     <script src="{% static 'js/vendor/web3.min.js' %}"></script>
     <script src="{% static 'js/vendor/maralis.js' %}"></script>
     <script src="{% static 'js/vendor/nft.js' %}"></script>
+
     {% block custom_scripts %}
     {% endblock %}
 </body>

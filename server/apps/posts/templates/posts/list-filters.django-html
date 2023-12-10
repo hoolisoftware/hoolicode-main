@@ -1,0 +1,46 @@
+<div class="mb--50">
+    <div class="row align-items-center">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+            <h3 class="title mb--0 sal-animate" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                Мы пишем, что бы вы знали!
+            </h3>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt_mobile--15">
+            <div class="view-more-btn text-start text-sm-end sal-animate" data-sal-delay="150" data-sal="slide-up"
+                data-sal-duration="800">
+                <button class="discover-filter-button discover-filter-activation btn btn-primary open">Filter<i
+                        class="feather-filter"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="default-exp-wrapper default-exp-expand" style="display: none;">
+        <div class="inner row pb--0">
+            <div class="col-12 col-sm-6 mb-3">
+                <div class="filter-select-option">
+                    <label class="filter-leble">Search in blog</label>
+                    <div class="search-form-wrapper mb-3">
+                        <input type="search" class="w-100" placeholder="Arama yap..." aria-label="Search">
+                        <div class="search-icon">
+                            <i class="feather-search"></i>
+                        </div>
+                    </div>
+                    <p>Search performed by title and content of entire publications and may be userful as well.</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-3 mb-3">
+                <div class="filter-select-option">
+                    <label class="filter-leble">Tags</label>
+                    {{ filter.form.tags }}
+                </div>
+            </div>
+    
+            <div class="col-12 col-sm-3 mb-3">
+                <div class="filter-select-option">
+                    <label class="filter-leble">Category</label>
+                    {{ filter.form.category }}
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</div>

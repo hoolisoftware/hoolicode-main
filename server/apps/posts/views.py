@@ -1,12 +1,15 @@
 from django.views import generic
+from django_filters.views import FilterView
 
 from . import forms
 from . import models
+from . import filters
 
 
-class PostListView(generic.ListView):
+class PostListView(FilterView):
     template_name = 'posts/list.django-html'
     model = models.Post
+    filterset_class = filters.PostFilter 
 
 
 class PostDetailView(generic.FormView, generic.DetailView):

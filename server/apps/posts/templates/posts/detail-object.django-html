@@ -1,0 +1,20 @@
+{% load core %}
+
+<div class="blog-content-top mb-2">
+    <h2 class="title">{{ object.title }}</h2>
+    <span class="date">{{ object.created }}</span>
+</div>
+<div class="tagcloud mb-4">
+    {% for tag in object.tags.all %}
+    <a href="#">{{ tag.name }}</a>
+    {% endfor %}
+</div>
+<div class="bd-thumbnail">
+    <div class="large-img mb--30">
+        <img class="w-100" style="width: 100%; height: 300px; object-fit: cover;"
+            src="{{ object.thumbnail.url }}" alt="Blog Images">
+    </div>
+</div>
+<div class="news-details mb-5">
+    {{ object.content|markdown }}
+</div>

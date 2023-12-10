@@ -40,7 +40,7 @@
                             <br>
                             <span class="text-warning h2">{{ object.salary }}</span>
                         </div>
-                        <div class="news-details">
+                        <div class="wysiwyg-content">
                             {{ object.description|markdown }}
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                     <h3 class="mb--30">Форма отклика на вакансию</h3>
                     <form id="ajaxForm" method="POST" enctype="multipart/form-data">
                         <div class="row">
-                            {% include 'ajax_form.django-html' with form=form form_action='/api/vacancy-request-create/' %}
+                            {% include 'ajax_form.django-html' with form=form form_action='/api/company/vacancy-request-create/' %}
                             <div class="mb-5 col-12">
                                 <label for="condition" class="rn-check-box-label">Нажимая "Отликнуться", вы соглашаетесь принять на вашу электронную почту письмо с результатом вашего отклика.</label>
                             </div>
@@ -87,12 +87,17 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus libero ratione magni sapiente, veniam, enim</h3>
+                <h3>
+                    Join Hooli Software!
+                </h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id reprehenderit molestias architecto, ab quo amet illum nemo aut animi tempore facilis iste laboriosam, doloribus perspiciatis, libero at. Numquam, ullam in.
+                    Ready to embark on an exciting journey with us? Submit your resume and portfolio.
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus pariatur ullam nulla inventore non architecto totam harum tenetur, odio corrupti obcaecati velit enim autem accusantium optio quod natus deleniti labore. 
+                    We look forward to welcoming passionate individuals who are eager to contribute to our vision!
+                </p>
+                <p>
+                    We're not just building software; we're crafting experiences, solving challenges, and fostering innovation. With a commitment to excellence and a dynamic team of passionate professionals, we've been making waves in the software development sector.
                 </p>
             </div>
         </div>

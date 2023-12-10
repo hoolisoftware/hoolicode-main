@@ -1,0 +1,49 @@
+{% load i18n %}
+{% load posts %}
+
+<aside class="rwt-sidebar">
+
+    <div class="rbt-single-widget widget_categories">
+        <h3 class="title">{% translate 'Popular categories' %}</h3>
+        <div class="inner">
+            <ul class="category-list ">
+                {% get_popular_categories as popular_categories %}
+                {% for category in popular_categories %}
+                    <li>
+                        <a href="#"><span class="left-content">{{ category.name }}</span><span class="count-text">{{ category.posts.count }}</span></a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="rbt-single-widget widget_tag_cloud mt--40">
+        <h3 class="title">{% translate 'Popular tags' %}</h3>
+        <div class="inner mt--20">
+            <div class="tagcloud">
+                {% get_popular_tags as popular_tags %}
+                {% for tag in popular_tags %}
+                    <a href="#">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="rbt-single-widget widget_recent_entries mt--40">
+        <h3 class="title">{% translate 'Recent posts' %}</h3>
+        <div class="inner">
+            <ul>
+                {% get_recent_posts as recent_posts %}
+                {% for post in recent_posts %}
+                    <li>
+                        <a class="d-block" href="{{ post.get_absolute_url }}">
+                            {{ post.title }}
+                        </a>
+                        <span class="cate">{{ post.category.name }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+</aside>

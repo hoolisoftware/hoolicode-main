@@ -16,9 +16,9 @@ ENV DockerHOME=/home/app/webapp
 RUN mkdir -p $DockerHOME
 WORKDIR $DockerHOME
 
-RUN pip install --upgrade pip
+RUN pip install --no-cache-dir --upgrade pip
 COPY ./requirements/requirements.dev.txt /requirements.dev.txt 
-RUN pip install -r /requirements.dev.txt
+RUN pip install --no-cache-dir -r /requirements.dev.txt
 
 COPY ./docker/development/server/entrypoint.sh /
 COPY ./docker/development/server/start.sh /

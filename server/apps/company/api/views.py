@@ -7,7 +7,6 @@ from .. import models
 class FeedbackRequestCreateAV(generics.CreateAPIView):
     queryset = models.FeedbackRequest.objects.all()
     serializer_class = serializers.FeedbackRequestSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 
 class VacancyRequestCreateAV(generics.CreateAPIView):

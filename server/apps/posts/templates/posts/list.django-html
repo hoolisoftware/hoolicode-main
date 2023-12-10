@@ -29,34 +29,10 @@
 
     <div class="rn-blog-area rn-section-gapTop">
         <div class="container">
+            {% include './list-filters.django-html' with filter=filter %}
             <div class="row g-5">
                 {% for object in object_list %}
-                <div class="col-lg-4 col-md-6 col-12" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
-                    <div class="rn-blog" data-toggle="modal" data-target="#exampleModalCenters">
-                        <div class="inner">
-                            <div class="thumbnail">
-                                <a href="{{ object.get_absolute_url }}">
-                                    <img style="width: 100%; height: 300px;" src="{{ object.thumbnail.url }}"
-                                        alt="Personal Portfolio Images">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <div class="category-info">
-                                    <div class="category-list">
-                                        <a href="#">{{ object.category.name }}</a>
-                                    </div>
-                                    <div class="meta">
-                                        <span>
-                                            <i class="fa-solid fa-calendar-days"></i>
-                                            </i> {{ object.created }}</span>
-                                    </div>
-                                </div>
-                                <h4 class="title mb-4"><a href="{{ object.get_absolute_url }}">{{ object.title }}<i
-                                            class="feather-arrow-up-right"></i></a></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    {% include './list-item.django-html' with object=object %}
                 {% endfor %}
                 <!-- start single blog -->
             </div>
