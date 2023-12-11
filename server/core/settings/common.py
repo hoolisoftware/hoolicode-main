@@ -8,8 +8,7 @@ CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0', 'http://127.0.0.1', 'http://localhost'
 
 if (HOST := environ.get('HOST')):
     ALLOWED_HOSTS.append(HOST)
-    CSRF_TRUSTED_O
-    RIGINS.append(f'https://{HOST}')
+    CSRF_TRUSTED_ORIGINS.append(f'https://{HOST}')
 
 INSTALLED_APPS = [
     'corsheaders',
