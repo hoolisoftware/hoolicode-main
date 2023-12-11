@@ -3,12 +3,13 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost', 'maxyazilim.com']
-CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0', 'http://127.0.0.1', 'http://localhost', 'https://maxyazilim.com']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost', 'maxyazilim.com', 'hoolisoftware.xyz']
+CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0', 'http://127.0.0.1', 'http://localhost', 'https://maxyazilim.com', 'https://hoolisoftware.xyz']
 
 if (HOST := environ.get('HOST')):
     ALLOWED_HOSTS.append(HOST)
-    CSRF_TRUSTED_ORIGINS.append(f'https://{HOST}')
+    CSRF_TRUSTED_O
+    RIGINS.append(f'https://{HOST}')
 
 INSTALLED_APPS = [
     'corsheaders',

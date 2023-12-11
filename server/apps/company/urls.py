@@ -23,5 +23,7 @@ urlpatterns = [
          name='django.contrib.sitemaps.views.sitemap'),
     path('vacancies/<str:slug>/',
          views.VacancyDetailView.as_view(), name='vacancy-detail'),
+    path('privacy-policy/',
+         views.PrivacyPolicyView.as_view(), name='privacy-policy'),
     path('test/', views.TestView.as_view(), name='test'),
 ]

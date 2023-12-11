@@ -11790,7 +11790,7 @@ body.sal-disabled [data-sal|=flip] {
   display: flex;
   align-items: center;
   justify-content: start;
-  flex-basis: 55%;
+  flex-basis: 65%;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .haeder-default .header-left {
@@ -13147,8 +13147,9 @@ Blog style
   width: 100%;
   transition: var(--transition);
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   transition: var(--transition);
+  background: rgba(0, 0, 0, 0.2);
 }
 .rn-blog .inner .content {
   padding-top: 18px;

@@ -38,5 +38,9 @@ class VacancyDetailView(generic.DetailView, generic.FormView):
     template_name = 'company/vacancy-detail.django-html'
 
 
+class PrivacyPolicyView(generic.TemplateView):
+    template_name = 'company/privacy-policy.django-html'
+
+
 class TestView(generic.TemplateView):
     template_name = 'test.django-html'
